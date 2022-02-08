@@ -1,0 +1,617 @@
+.admin {
+  width: 100%;
+  display: grid;
+  grid-template-areas:
+    "logo  logo"
+    "aside main";
+  grid-template-columns: 157px minmax(auto, 920px);
+  grid-template-rows: 100px auto;
+  grid-gap: 30px;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  &__main-logo {
+    grid-area: logo;
+    align-self: center;
+    justify-self: center;
+    img {
+      width: 100%;
+      height: 100px;
+      display: block;
+      object-fit: contain;
+    }
+  }
+  &__container {
+    grid-area: main;
+    width: 100%;
+    height: 100%;
+    padding: 50px;
+    background: #242424;
+    border-radius: 45px;
+  }
+  &__sidebar {
+    grid-area: aside;
+    width: 100%;
+    padding: 50px 20px;
+    background: #242424;
+    border-radius: 45px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__logo {
+    width: 85px;
+    img {
+      width: 100%;
+      display: block;
+      object-fit: contain;
+    }
+  }
+  &__title {
+    font-style: normal;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 28px;
+    width: 100%;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 37px;
+  }
+  &__menu {
+    padding: 30px 0;
+    margin: 25px 0;
+    border-bottom: 1px solid #fff;
+    border-top: 1px solid #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    &-item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      cursor: pointer;
+      img {
+        transition: 0.3s;
+      }
+      & + div {
+        margin-top: 30px;
+      }
+      span {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 21px;
+
+        color: #ffffff;
+      }
+      &:hover {
+        img {
+          filter: drop-shadow(0 0 5px #8af8ff);
+        }
+      }
+    }
+  }
+  &__logout {
+    display: flex;
+    @extend %btn;
+    margin-top: auto;
+    img {
+      margin-right: 6px;
+    }
+  }
+  &__block {
+    visibility: hidden;
+    opacity: 0;
+    width: 0;
+    height: 0;
+    transition: opacity 0.3s;
+    &-title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 36px;
+      line-height: 42px;
+      margin-bottom: 50px;
+      color: #ffffff;
+    }
+    &.active {
+      opacity: 1;
+      visibility: visible;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .clients {
+    &__list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 40px;
+      .clients-item {
+        width: 370px;
+        background: #444;
+        border-radius: 27px;
+        padding: 22px 34px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        &__row {
+          display: flex;
+          justify-content: space-between;
+          align-items: flex-start;
+          width: 100%;
+        }
+        &__col {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: flex-start;
+          &:nth-child(2) {
+            // margin-left: 45px;
+          }
+        }
+        h3 {
+          color: #fff;
+        }
+        &__tariffs {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          flex-wrap: wrap;
+          width: 90px;
+          span {
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            width: 38px;
+            height: 17px;
+            border-radius: 5px;
+            margin-top: 10px;
+            &.silver {
+              background-image: url(../assets/images/tariff-silver.png);
+            }
+            &.gold {
+              background-image: url(../assets/images/tariff-gold.png);
+            }
+            &.platinum {
+              background-image: url(../assets/images/tariff-platinum.png);
+            }
+            &.infinity {
+              background-image: url(../assets/images/tariff-infinity.png);
+            }
+          }
+        }
+        &__name {
+          font-family: Raleway;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 18px;
+          line-height: 21px;
+          color: #ffffff;
+          margin-top: 5px;
+        }
+        &__email {
+          font-family: Raleway;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 14px;
+          line-height: 16px;
+
+          color: #ffffff;
+          margin-top: 5px;
+        }
+        &__phone {
+          font-family: Montserrat;
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          /* identical to box height */
+
+          color: #ffffff;
+          margin-top: 5px;
+        }
+        &__id {
+          font-style: normal;
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 16px;
+
+          color: #ffffff;
+          margin-top: 5px;
+        }
+        &__open-btn {
+          @extend %btn;
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+  .requests {
+    &__container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-gap: 40px;
+    }
+    &__row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+    }
+    &__col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      &:nth-child(2) {
+        // margin-left: 45px;
+      }
+    }
+    &__name {
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 21px;
+      color: #ffffff;
+      margin-top: 5px;
+    }
+    &__email {
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 14px;
+      line-height: 16px;
+
+      color: #ffffff;
+      margin-top: 5px;
+    }
+    &__phone {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 17px;
+      /* identical to box height */
+
+      color: #ffffff;
+      margin-top: 5px;
+    }
+    &__id {
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 16px;
+
+      color: #ffffff;
+      margin-top: 5px;
+    }
+    &__item {
+      width: 370px;
+      background: #444;
+      border-radius: 27px;
+      padding: 22px 34px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+    }
+    &__title {
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 16px;
+
+      color: #ffffff;
+    }
+    &__value {
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 29px;
+
+      color: #ffffff;
+    }
+    &__btns {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 25px;
+    }
+    &__yes {
+      @extend %btn;
+      background: #00df16;
+      color: #fff;
+      width: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &__no {
+      @extend %btn;
+      background: #ff4141;
+      color: #fff;
+      width: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .admin {
+    .clients {
+      &__list {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+      }
+    }
+    .requests {
+      &__container {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        align-items: center;
+      }
+    }
+  }
+}
+
+.user {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+  &.show {
+    opacity: 1;
+    visibility: visible;
+  }
+  &__close {
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+  }
+  &__container {
+    position: relative;
+    padding: 65px 100px;
+    background: #525252;
+    border-radius: 26px;
+    display: grid;
+    grid-template-areas:
+      "info balance"
+      "tariffs history";
+    grid-row-gap: 70px;
+    grid-column-gap: 100px;
+  }
+  &__info {
+    grid-area: info;
+  }
+  &__block {
+    grid-area: balance;
+  }
+  &__tariffs {
+    grid-area: tariffs;
+  }
+  &__history {
+    grid-area: history;
+  }
+  &__name {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+
+    color: #ffffff;
+  }
+  &__email {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: 10px;
+    color: #ffffff;
+  }
+  &__id {
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: 5px;
+    color: #ffffff;
+  }
+  &__phone {
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    margin-top: 5px;
+    color: #ffffff;
+  }
+  &__balance {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    p {
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+
+      color: #ffffff;
+    }
+    span {
+      margin-left: 10px;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 29px;
+
+      color: #ffffff;
+    }
+  }
+  &__income {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    p {
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 21px;
+
+      color: #ffffff;
+    }
+    span {
+      margin-left: 10px;
+      font-family: Montserrat;
+      font-style: normal;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 22px;
+      /* identical to box height */
+
+      color: #ffffff;
+    }
+  }
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-top: 30px;
+  }
+  &__delete {
+    @extend %btn;
+    background: #ff4141;
+    color: #fff;
+  }
+  &__profile {
+    @extend %btn;
+  }
+  &__tariffs {
+    h3 {
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 28px;
+
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+    .tariff {
+      &.added {
+        button {
+          background-color: #fff;
+          color: #000;
+        }
+      }
+      &.available {
+        button {
+          background-color: #8af8ff;
+          color: #000;
+        }
+      }
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      & + div {
+        margin-top: 25px;
+      }
+      p {
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: bold;
+        color: #fff;
+      }
+      button {
+        bottom: 0;
+        padding: 8px;
+        border-radius: 99px;
+        font-size: 16px;
+        line-height: 8px;
+        font-weight: bold;
+        border: 0;
+      }
+    }
+  }
+  &__history {
+    h3 {
+      font-family: Raleway;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 24px;
+      line-height: 28px;
+
+      color: #ffffff;
+      margin-bottom: 15px;
+    }
+    .history-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      & + div {
+        margin-top: 25px;
+      }
+      &.in {
+        p {
+          color: #8af8ff;
+        }
+      }
+      &.out {
+        p {
+          color: #fff;
+        }
+      }
+      p {
+        font-family: Montserrat;
+        font-size: 20px;
+        line-height: 24px;
+        font-weight: bold;
+      }
+      .remove {
+        bottom: 0;
+        padding: 8px;
+        border-radius: 99px;
+        font-size: 16px;
+        line-height: 8px;
+        font-weight: bold;
+        border: 0;
+        background: #8af8ff;
+        color: #000;
+      }
+    }
+  }
+}

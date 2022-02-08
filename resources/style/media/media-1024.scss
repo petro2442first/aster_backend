@@ -1,0 +1,134 @@
+@media screen and (max-width: 1024px) {
+  .tariffs {
+    &__container {
+      .tariff-item {
+        width: 315px;
+        padding: 15px;
+        padding-bottom: 25px;
+        &__row {
+          &:nth-child(2) {
+            flex-direction: column;
+            align-items: flex-start;
+            margin-top: 10px;
+          }
+        }
+        &__price {
+          font-weight: 800;
+          font-size: 18px;
+          line-height: 22px;
+        }
+        &__period {
+          font-size: 14px;
+          line-height: 17px;
+        }
+        &__percents {
+          font-size: 14px;
+          line-height: 17px;
+          align-self: flex-end;
+        }
+        &__description {
+          display: none;
+        }
+      }
+    }
+  }
+  .about {
+    &__row {
+      width: 100%;
+      height: 255px;
+      padding-right: 200px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      $pd: 80px;
+      p {
+        margin-left: $pd;
+      }
+      &:first-child {
+        padding: 0 $pd;
+        img {
+          object-fit: contain;
+          width: 90%;
+          height: 90%;
+          object-position: center center;
+        }
+      }
+      &:nth-child(2n) {
+        flex-direction: row-reverse;
+        padding-right: 0;
+        padding-left: $pd;
+        background: rgba(0, 0, 0, 0.56);
+        p {
+          margin-left: 0;
+          margin-right: $pd;
+        }
+      }
+      &:nth-child(3) {
+        padding: 0 $pd;
+        p {
+          max-width: 100%;
+          text-align: center;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  .pm {
+    grid-template-areas:
+      "info"
+      "block";
+    &__menu {
+      display: contents;
+      &-burger {
+        display: block;
+        transition: 0.3s;
+      }
+      &-list {
+        position: fixed;
+        z-index: 99999;
+        visibility: hidden;
+        opacity: 0;
+        right: -275px;
+        top: 0;
+        width: 275px;
+        background: #000;
+        height: 100vh;
+        padding: 80px 30px;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        transition: 0.3s;
+      }
+      &-item {
+        justify-content: flex-start;
+        & + li {
+          margin-top: 30px;
+        }
+        &.active {
+          a {
+            font-weight: bold;
+            font-size: 28px;
+            line-height: 32px;
+
+            color: rgba(138, 248, 255, 0.89);
+            white-space: nowrap;
+          }
+        }
+        a {
+          font-weight: 600;
+          text-align: left;
+        }
+      }
+      &.show {
+        .pm__menu-burger {
+          transform: translateX(-275px);
+        }
+        .pm__menu-list {
+          opacity: 1;
+          visibility: visible;
+          right: 0;
+        }
+      }
+    }
+  }
+}

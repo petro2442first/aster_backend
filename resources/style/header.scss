@@ -1,0 +1,118 @@
+%lang {
+  position: relative;
+  padding-bottom: 25px;
+  & > a {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    img {
+      width: 33px;
+      height: 21px;
+      margin-right: 5px;
+    }
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 21px;
+  }
+  .lang-sub-menu {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: calc(100% + 0px);
+    padding: 20px 30px;
+    border-radius: 19px;
+    background: #242424;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: 0.3s;
+    .sub-item {
+      & + li {
+        margin-top: 10px;
+      }
+      a {
+        width: 100%;
+        img {
+          width: 37px;
+          height: 25px;
+        }
+      }
+    }
+  }
+  &:hover {
+    .lang-sub-menu {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+}
+.header {
+  width: 100%;
+  &__container {
+    width: 100%;
+  }
+  &__nav {
+    position: relative;
+    width: 100%;
+    .burger {
+      display: none;
+      position: fixed;
+      top: 57px;
+      right: 30px;
+      z-index: 99999;
+      svg {
+        filter: drop-shadow(0 0 3px #333);
+      }
+    }
+    .nav-list {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+    .nav-item {
+      &.current {
+        a {
+          color: rgba(138, 248, 255, 0.89);
+        }
+      }
+      a {
+        display: block;
+        position: relative;
+        color: #d3fcffe3;
+        font-weight: 500;
+        font-size: 18px;
+        line-height: 21px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 5px;
+        &::after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          width: 0;
+          height: 2px;
+          background: #d3fcffe3;
+          transition: 0.3s;
+        }
+        &:hover {
+          &::after {
+            width: 100%;
+            left: 0;
+          }
+        }
+      }
+      &.nav-logo {
+        @extend %logo;
+      }
+      &.nav-lang {
+        @extend %lang;
+      }
+    }
+  }
+}

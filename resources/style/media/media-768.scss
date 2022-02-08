@@ -1,0 +1,187 @@
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url(../../assets/images/bg-main-mobile.png);
+    &.main-body {
+      .footer {
+        margin-top: 250px;
+      }
+    }
+    &.tariffs-body {
+      background-position: center 200px;
+    }
+    &.contacts-body {
+      .wrapper {
+        &::after {
+          background-image: url(../../assets/images/bg-contacts-mobile.png);
+        }
+      }
+    }
+  }
+  .wrapper {
+    width: 100%;
+    padding: 55px 30px;
+    &::after {
+      height: 765px !important;
+      max-height: 765px !important;
+    }
+  }
+  .logo {
+    width: 157px;
+    margin-top: 50px;
+  }
+  .header {
+    &__nav {
+      .burger {
+      }
+    }
+  }
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+    .main-logo {
+      padding-bottom: 325px;
+    }
+    .home-description {
+      text-align: center;
+    }
+    .home-register-btn {
+      margin-top: 130px;
+    }
+  }
+  .footer {
+    width: calc(100% - 60px);
+  }
+  .about {
+    p {
+      padding: 30px;
+    }
+    &__row {
+      width: 100%;
+      height: fit-content;
+      padding-right: 200px;
+      display: flex;
+      flex-direction: column !important;
+      align-items: center;
+      $pd: 0px;
+      p {
+        margin-left: $pd;
+        text-align: center;
+      }
+      &:first-child {
+        padding: 0 $pd;
+        img {
+          width: 100%;
+          object-fit: contain;
+          // width: 236px;
+          height: 106px;
+          object-position: center center;
+        }
+      }
+      &:nth-child(2n) {
+        flex-direction: row-reverse;
+        padding-right: 0;
+        padding-left: $pd;
+        background: transparent;
+        p {
+          margin-left: 0;
+          margin-right: $pd;
+        }
+      }
+      &:nth-child(3) {
+        padding: 0 $pd;
+        p {
+          max-width: 100%;
+          text-align: center;
+          margin-left: 0;
+        }
+      }
+    }
+    &__description {
+      display: none;
+    }
+  }
+  .faq {
+    &__item {
+      p {
+        &:nth-child(2) {
+          padding-left: 0;
+        }
+      }
+    }
+  }
+  .contacts {
+    &__row {
+      flex-direction: column;
+      align-items: center;
+    }
+    &__map {
+      height: 395px;
+    }
+    .tech-support {
+      margin-left: 0;
+      margin-top: 75px;
+    }
+  }
+  %block-style {
+    background: #353535;
+  }
+  .pm {
+    &__info {
+      background: none;
+    }
+    &__main {
+      .finance {
+        grid-template-areas:
+          "bal bal"
+          "inc inc"
+          "pay out";
+        &__balance {
+          width: 100%;
+          justify-content: space-between;
+          flex-direction: row;
+          p:nth-child(2) {
+            margin-top: 0;
+            margin-left: 20px;
+          }
+        }
+        &__income {
+          width: 100%;
+          justify-content: space-between;
+          flex-direction: row;
+          p:nth-child(2) {
+            margin-top: 0;
+            margin-left: 20px;
+          }
+        }
+      }
+      .deposits {
+        width: 100%;
+        padding: 0;
+        &__title {
+          padding: 0 15px;
+          margin-bottom: 15px;
+        }
+        &__list {
+          padding: 20px;
+          .tariff-item {
+            width: 100%;
+            margin: 0;
+            & + div {
+              margin-top: 20px;
+            }
+          }
+          &::-webkit-scrollbar {
+            width: 0;
+          }
+        }
+      }
+    }
+  }
+  body {
+    &.profile-body {
+      padding: 20px;
+    }
+  }
+}

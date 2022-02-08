@@ -1,0 +1,40 @@
+@include form("login");
+.login {
+  margin-top: 70px;
+  &__form {
+    padding-bottom: 0;
+    padding-top: 50px;
+  }
+  &__not-registered {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__forgot-pswrd {
+    font-family: "Raleway";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 16px;
+    text-decoration-line: underline;
+
+    color: #ffffff;
+    margin-bottom: 56px;
+    margin-top: 11px;
+  }
+  &__submit {
+    &--alt {
+      border: 1px solid #fff;
+      background: transparent;
+      color: #fff;
+      margin-top: 10px;
+    }
+  }
+}

@@ -1,0 +1,151 @@
+.tariffs {
+  font-family: "Montserrat", sans-serif;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-bottom: 45px;
+  .referral-info {
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    /* identical to box height */
+
+    text-align: center;
+    text-transform: uppercase;
+    font-style: normal;
+    color: #ffffff;
+    margin-bottom: 20px;
+  }
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    .tariff-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 30px;
+      border-radius: 25px;
+      background-color: #fff;
+      width: 445px;
+      margin: 15px;
+      font-family: "Montserrat", sans-serif;
+      &.silver {
+        background-image: url(../assets/images/silver-tariff.png);
+        background-position: center center;
+        background-size: 120% 130%;
+        background-repeat: no-repeat;
+        box-shadow: inset -9px 0px 15px #272222, -6px 0px 15px #ffffff;
+      }
+      &.platinum {
+        background-image: url(../assets/images/platinum-tariff.png);
+        background-position: center center;
+        background-size: 120% 130%;
+        background-repeat: no-repeat;
+        box-shadow: inset -4px 0px 15px #161616;
+        * {
+          color: #fff;
+        }
+      }
+      &.gold {
+        background-image: url(../assets/images/gold-tariff.png);
+        background-position: center center;
+        background-size: 120% 130%;
+        background-repeat: no-repeat;
+        box-shadow: 0px 0px 15px 5px #ffc635;
+      }
+      &.infinity {
+        background-image: url(../assets/images/infinity-tariff.png);
+        background-position: center center;
+        background-size: 120% 130%;
+        background-repeat: no-repeat;
+        box-shadow: inset -16px 6px 19px #032b50, -5px 0px 22px 5px #42a4ff;
+        * {
+          color: #fff;
+        }
+      }
+      &.invest-case {
+        background-color: rgba(0, 0, 0, 0.63);
+        background-image: url(../assets/images/invest-case-tariff.png);
+        background-position: center center;
+        background-size: 120% 130%;
+        background-repeat: no-repeat;
+        box-shadow: inset -7px 0px 14px rgba(138, 248, 255, 0.89),
+          -7px 0px 15px 5px rgba(186, 251, 255, 0.89);
+        * {
+          color: #fff;
+          text-shadow: 1px 1px 1px #000;
+        }
+      }
+      &__row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      &__title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        text-transform: uppercase;
+        color: #000000;
+      }
+      &__price {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: bold;
+        font-size: 24px;
+        line-height: 29px;
+        text-transform: uppercase;
+        color: #000000;
+      }
+      &__period {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        span {
+          font-style: normal;
+          font-weight: 300;
+          font-size: 14px;
+          line-height: 17px;
+        }
+      }
+      &__percents {
+        font-family: "Red Hat Display";
+        font-style: normal;
+        font-weight: 800;
+        font-size: 14px;
+        line-height: 17px;
+        /* identical to box height */
+
+        color: #000000;
+      }
+      &__description {
+        font-weight: 600;
+        font-size: 12px;
+        line-height: 15px;
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 30px;
+        color: #000000;
+        // height: 50px;
+        p {
+          font-weight: 600;
+          font-size: 9px;
+          line-height: 11px;
+          text-align: center;
+          text-transform: uppercase;
+        }
+      }
+    }
+  }
+  &__invest {
+    @extend %btn;
+    margin-top: 25px;
+  }
+}

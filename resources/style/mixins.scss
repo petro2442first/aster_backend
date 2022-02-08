@@ -1,0 +1,128 @@
+@mixin form($container) {
+  .#{$container} {
+    &__form {
+      position: relative;
+      z-index: 1;
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      max-width: 375px;
+      width: 375px;
+      padding-top: 30px;
+      padding-bottom: 50px;
+      form {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+    &__group {
+      position: relative;
+      width: 350px;
+      background: #323232;
+      border-radius: 21px;
+      & + .#{$container}__group {
+        margin-top: 30px;
+      }
+      label {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 16px;
+        z-index: 0;
+        color: #ffffff;
+        transition: 0.3s;
+      }
+      input {
+        position: relative;
+        width: 100%;
+        padding: 20px 30px;
+        background: transparent;
+        border: 0;
+        z-index: 1;
+        font-size: 14px;
+        line-height: 16px;
+        outline: 0;
+        color: #fff;
+      }
+      &.focus {
+        label {
+          top: -16px;
+          left: 10px;
+          font-size: 12px;
+          line-height: 14px;
+        }
+      }
+    }
+    &__message {
+      width: 350px;
+      position: relative;
+      margin-top: 30px;
+      background: #323232;
+      border-radius: 21px;
+      label {
+        position: absolute;
+        top: 20px;
+        left: 30px;
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 16px;
+        z-index: 0;
+        color: #ffffff;
+        transition: 0.3s;
+      }
+      textarea {
+        position: relative;
+        width: 100%;
+        padding: 20px 30px;
+        background: transparent;
+        border: 0;
+        z-index: 1;
+        resize: vertical;
+        min-height: 150px;
+        font-size: 14px;
+        line-height: 16px;
+        outline: 0;
+        color: #fff;
+      }
+      &.focus {
+        label {
+          top: -16px;
+          left: 10px;
+          font-size: 12px;
+          line-height: 14px;
+        }
+      }
+    }
+    &__submit {
+      margin-top: 30px;
+      padding: 15px 25px;
+      background: rgba(255, 255, 255, 0.89);
+      border-radius: 28px;
+      font-family: "Raleway";
+      font-style: normal;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 16px;
+      border: 0;
+      color: #000000;
+      cursor: pointer;
+      transition: 0.3s;
+      &:hover {
+        box-shadow: 0 0 10px #fff;
+      }
+    }
+  }
+}
