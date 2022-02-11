@@ -19,16 +19,6 @@ class AdminController extends Controller
 
         $users = User::all()->where('is_admin', false);
         $reqs = PaymentRequest::all();
-        foreach($reqs as $pay_req) {
-            $user = User::find($pay_req->user_id);
-
-            // $pay_req->login = $user->login;
-            $pay_req->name = $user->name . ' ' . $user->lastname;
-            $pay_req->email = $user->email;
-            $pay_req->phone = $user->phone;
-
-        }
-
         return view('admin.index', [
             'users' => $users,
             'requests' => $reqs
@@ -81,7 +71,7 @@ class AdminController extends Controller
     }
     public function login(Request $request)
     {
-        $user = User::all()->where('id', $request->id)->first();
+        $user = User::all()->find($request->id);
         Auth::login($user);
         return redirect()->route('profile.index-admin');
     }
@@ -95,9 +85,8 @@ class AdminController extends Controller
     }
 
     public function setBalance(Request $request) {
-        // dd($request->user_id);
         $user = User::find($request->user_id);
-        $diff = $request->amount - $user->balance;
+        $diff = (int)$request->amount - (int)$user->balance;
         $appointment = $diff > 0 ? '+' : '-';
         $transfer = new Transfer;
         if($request->title == '') {

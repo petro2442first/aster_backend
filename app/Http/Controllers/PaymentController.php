@@ -26,7 +26,6 @@ class PaymentController extends Controller
     }
     public function tariff_post(Request $request, $admin = '')
     {
-        // dd($request->amount);
         $user = Auth::user();
         $user = User::find($user->id);
         if($user->confirmed === 0)
@@ -49,14 +48,15 @@ class PaymentController extends Controller
         $route_error = $admin == 'admin'
         ? route('profile.index-admin')
         : route('payment-error');
-
-        return view('payment.tariff_post', [
-            'payment' => $payment,
-            'amount' => $request->amount,
-            'tariff_id' => $request->tariff_id,
-            'success_url' => $route_success,
-            'error_url' => $route_error
-        ]);
+        PaymentController::success($request, $request->amount, $request->tariff);
+        // return view('payment.tariff_post', [
+        //     'payment' => $payment,
+        //     'amount' => $request->amount,
+        //     'tariff_id' => $request->tariff_id,
+        //     'success_url' => $route_success,
+        //     'error_url' => $route_error
+        // ]);
+        return redirect()->route('profile');
     }
     public function deposit(string $admin = '')
     {
@@ -69,7 +69,7 @@ class PaymentController extends Controller
     }
     public function deposit_post(Request $request, string $admin = '')
     {
-
+        $this::success($request, $request->payment);
         $payment = PaymentCurrency::all()->where(
             'title',
            'USD')
@@ -88,7 +88,8 @@ class PaymentController extends Controller
         $user = Auth::user();
         $user = User::find($user->id);
         if($user->confirmed === 0) return redirect()->route('payment-error', ['no-confirmed']);
-
+             dd($request->tariff);
+        $this::success($request, $request->payment);
         return view('payment.deposit_post', [
             'payment' => $payment,
             'amount' => $request->amount,
@@ -124,13 +125,12 @@ class PaymentController extends Controller
     }
     static public function success(
         Request $request,
-        $admin = null,
         $payment = null,
-        $currency = null,
         $tariff_id = null)
     {
+
         $user = User::find(Auth::user()->id);
-            $payment = $request->payment;
+            $payment = $request->amount;
             $tariff_id = $request->tariff_id;
             $user->balance += $payment;
             $user->insurance_balance = $user->balance;
@@ -142,11 +142,11 @@ class PaymentController extends Controller
                 : [];
                 foreach($all_tariffs as $key => $tariff) {
                     if(!in_array($tariff->id, $user_tariffs)) {
-                        if($payment >= (int)$tariff->min_invest
-                            and $payment < (int)$tariff->max_invest) {
+                        // if($payment >= (int)$tariff->min_invest
+                            // and $payment < (int)$tariff->max_invest) {
                             array_push($user_tariffs, $tariff->id);
                             break;
-                        }
+                        // }
                     }
                 }
                 $user->tariff_plan = implode(',', $user_tariffs);

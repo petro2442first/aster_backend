@@ -35,9 +35,11 @@
             <p>Страховой баланс</p>
             <p>{{ $user->insurance_balance }}$</p>
           </div>
+          @if(count($available_plans) != 0)
           <button class="finance__pay-cash">Пополнить счет</button>
-          @if($withdraw == '')
-          <a href="{{ route('withdraw-funds') }}" class="finance__cash-out">Вывести</a>
+          @endif
+          @if($withdraw == true)
+          <a id="withdraw-btn" href="{{ route('withdraw-funds') }}" class="finance__cash-out">Вывести</a>
           @else
           <p class="finance__withdraw-notification">{{ $withdraw }}</p>
           @endif
@@ -75,6 +77,7 @@
       <div class="profile__container">
         <div class="profile__title">Личный кабинет</div>
         <div class="profile__row">
+            @if(count($available_plans) != 0)
           <div class="choose-tariff">
             <label for="choose-tariff">Выбор тарифа:</label>
             <select name="choose-tariff" id="choose-tariff">
@@ -86,6 +89,7 @@
           <button class="start-invest">
             Начать <img src="images/dot.svg" alt="" />
           </button>
+          @endif
           <div class="referral-link">
               <input type="text" value="{{ $user->referral_link }}">
             <img src="{{ asset('images/copy.svg') }}" alt="" />
@@ -140,18 +144,16 @@
           <div class="history__title">История транзакций:</div>
           <div class="history__list">
               @forelse ($transfers as $index => $transfer)
-              @if ($index == 2)
-                @break
-              @endif
+              @break($loop->iteration == 3)
               <div class="history__item {{ $transfer->appointment == '+' ? 'in' : 'out' }}">
                 <div class="history__value">{{$transfer->appointment}}{{ $transfer->value }}$</div>
-                <div class="history__description">{{ $transfer->title }}/div>
+                <div class="history__description">{{ $transfer->title }}</div>
               </div>
               @empty
                   <p style="color: #fff">Вы не проводили никаких операций</p>
               @endforelse
           </div>
-          @if(!$transfers->empty())
+          @if($transfers->isNotEmpty())
           <button class="history__see-more">
             Увидеть больше <img src="{{ asset('images/dot.svg') }}" alt="" />
           </button>
@@ -226,95 +228,29 @@
           <div class="tariffs">
             <h2>Выберите тариф:</h2>
             <div class="tariffs__container tariffs__column">
-              <div class="tariff-item silver">
-                <input type="radio" name="curr-tariff" id="silver-tariff" />
-                <label for="silver-tariff" class="radio"> </label>
+                @foreach ($available_plans as $tariff)
+              <div class="tariff-item {{ Str::slug($tariff->title, '-') }}">
+                <input type="radio" name="curr-tariff" id="{{ Str::slug($tariff->title, '-') }}-tariff" />
+                <label for="{{ Str::slug($tariff->title, '-') }}-tariff" class="radio"> </label>
                 <div class="tariff-item__row">
-                  <div class="tariff-item__title">SILVER</div>
-                  <div class="tariff-item__price">100-500$</div>
-                </div>
-                <div class="tariff-item__row">
-                  <div class="tariff-item__period">
-                    Deposit period: 21 business days
-                  </div>
-                  <div class="tariff-item__percents">0.7%/day</div>
-                </div>
-                <div class="tariff-item__description">
-                  Инвестиционные сделки в области коммуникаций и IT технологий
-                </div>
-              </div>
-              <div class="tariff-item platinum">
-                <input type="radio" name="curr-tariff" id="platinum-tariff" />
-                <label for="platinum-tariff" class="radio"> </label>
-                <div class="tariff-item__row">
-                  <div class="tariff-item__title">PLATINUM</div>
-                  <div class="tariff-item__price">1000-5000$</div>
+                    <div class="tariff-item__title">{{ $tariff->title }}</div>
+                  @if($tariff->max_invest != null)
+                  <div class="tariff-item__price">{{$tariff->min_invest}}-{{$tariff->max_invest}}$</div>
+                  @else
+                  <div class="tariff-item__price">from {{$tariff->min_invest}}$</div>
+                  @endif
                 </div>
                 <div class="tariff-item__row">
                   <div class="tariff-item__period">
-                    Deposit period: 50 business days
+                    <span>Deposit period:</span> {{ $tariff->period }} business days
                   </div>
-                  <div class="tariff-item__percents">3%/day</div>
+                  <div class="tariff-item__percents">{{ $tariff->profit }}%/day</div>
                 </div>
                 <div class="tariff-item__description">
-                  Инвестиции в коммерческую недвижимость
+                  {!! $tariff->{'description_' . session('locale')} !!}
                 </div>
               </div>
-              <div class="tariff-item gold">
-                <input type="radio" name="curr-tariff" id="gold-tariff" />
-                <label for="gold-tariff" class="radio"> </label>
-                <div class="tariff-item__row">
-                  <div class="tariff-item__title">GOLD</div>
-                  <div class="tariff-item__price">550-1000$</div>
-                </div>
-                <div class="tariff-item__row">
-                  <div class="tariff-item__period">
-                    Deposit period: 40 business days
-                  </div>
-                  <div class="tariff-item__percents">1.5%/day</div>
-                </div>
-                <div class="tariff-item__description">
-                  Инвестиции в криптовалюту и торгово-валютные сделки
-                </div>
-              </div>
-              <div class="tariff-item infinity">
-                <input type="radio" name="curr-tariff" id="infinity-tariff" />
-                <label for="infinity-tariff" class="radio"> </label>
-                <div class="tariff-item__row">
-                  <div class="tariff-item__title">INFINITY</div>
-                  <div class="tariff-item__price">5000-10000$</div>
-                </div>
-                <div class="tariff-item__row">
-                  <div class="tariff-item__period">
-                    Deposit period: 60 business days
-                  </div>
-                  <div class="tariff-item__percents">5%/day</div>
-                </div>
-                <div class="tariff-item__description">
-                  инвестиции в ценные бумаги и облигации
-                </div>
-              </div>
-              <div class="tariff-item invest-case">
-                <input type="radio" name="curr-tariff" id="invest-tariff" />
-                <label for="invest-tariff" class="radio"> </label>
-                <div class="tariff-item__row">
-                  <div class="tariff-item__title">INVEST CASE</div>
-                  <div class="tariff-item__price">from 10000$</div>
-                </div>
-                <div class="tariff-item__row">
-                  <div class="tariff-item__period">
-                    Deposit period: 60 business days
-                  </div>
-                  <div class="tariff-item__percents">from 7%/day</div>
-                </div>
-                <div class="tariff-item__description">
-                  Индивидуальные условия для инвесторов
-                  <p>
-                    Для получения инвестиционного предложения свяжитесь с
-                    инвестиционным советником
-                  </p>
-                </div>
-              </div>
+              @endforeach
             </div>
           </div>
           <div class="payment">
@@ -369,6 +305,28 @@
             </div>
           </div>
         </div>
+      </div>
+      <div class="withdraw-modal">
+          <div class="withdraw-modal__container">
+              <div class="withdraw-modal__close-btn">
+                <img src="images/close.svg" alt="" />
+              </div>
+              <div class="withdraw-modal__title">
+                  Запрос на вывод средств
+              </div>
+              <div class="withdraw-modal__description">
+                  Введите сумму для вывода в поле ниже
+              </div>
+              <form action="{{ route('withdraw-funds') }}" method="POST">
+                @csrf
+                <div class="withdraw-modal__input">
+                    <input type="number" value="1">
+                </div>
+                <button type="submit" class="withdraw-modal__submit">
+                  Отправить запрос
+                </button>
+                </form>
+          </div>
       </div>
     <script type="module" src="{{ asset('app.js') }}"></script>
   </body>

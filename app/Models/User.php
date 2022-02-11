@@ -4,6 +4,7 @@ namespace App\Models;
 
 use App\Notifications\EmailVerification;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -58,7 +59,14 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-
+    public function tariffs() {
+        $plans = explode(',', $this->tariff_plan);
+        $array = new Collection();
+        foreach($plans as $tariff) {
+            $array->push(TariffPlan::find($tariff));
+        }
+        return $array;
+    }
     public function transfers()
     {
         return $this->hasMany(Transfer::class, 'user_id');
