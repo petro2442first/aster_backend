@@ -65,7 +65,7 @@ return [
         'mysql' => [
             'driver' => 'mysql',
             'url' => env('DATABASE_URL'),
-            'host' => '67.222.38.85',
+            'host' => 'valians-finance.com',
             'port' => '3306',
             'database' => 'valiansf_WPI45',
             'username' => 'valiansf_WPI45',
