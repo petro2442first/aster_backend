@@ -58,7 +58,7 @@ class RegisteredUserController extends Controller
 //        Referral init
         $user->referral_link = User::create_referral_link();
         $user->find_referral($request->ref_link !== null ? $request->ref_link : null );
-        $user->last_login = 'online';
+        $user->last_login = Carbon::now();
         $user->ip = $request->ip();
         $user->saveOrFail();
 //        ---------------
@@ -66,10 +66,11 @@ class RegisteredUserController extends Controller
 
         Auth::login($user);
         // session(['user_id' => $user->id]);
-        return redirect()->route('verification.notice')
-        ->with([
-            'user' => $user
-        ]);
+        // return redirect()->route('verification.notice')
+        // ->with([
+        //     'user' => $user
+        // ]);
+        return redirect()->route('profile');
     }
 
 }

@@ -46,6 +46,14 @@ function customSelects() {
     });
 }
 function profile() {
+    function saveAvatar() {
+        const form = document.querySelector("#save-avatar-form") ?? null;
+        if (form === null) return;
+
+        const input = form.querySelector('input[type="file"]');
+        input.addEventListener("input", (e) => form.submit());
+    }
+    saveAvatar();
     function history() {
         const btn = document.querySelector(".history__see-more") ?? null;
         if (btn === null) return;
@@ -92,28 +100,31 @@ function profile() {
         });
     }
     function deposit() {
-        const btn = document.querySelector(".start-invest") ?? null;
-        const tariff = document.querySelector("#choose-tariff");
-
+        var btn = document.getElementsByClassName("start-invest")[0] ?? null;
         if (btn === null) return;
-        const modal = document.querySelector(".deposit-modal") ?? null;
-        if (modal === null) return;
+        var tariff = document.getElementById("choose-tariff");
+
+        var modal = document.getElementsByClassName("deposit-modal")[0];
         btn.onclick = () => {
-            modal.classList.add("show");
+            modal.className += " show";
             const modalTariff = modal.querySelector(".tariff-item");
             modalTariff.className = `tariff-item ${tariff.value.toLowerCase()}`;
             modalTariff.querySelector(".tariff-item__title").innerText =
                 tariff.value.toUpperCase();
-            modalTariff.querySelector('input[type="hidden"]').value =
+            modalTariff.getElementsByTagName("input")[0].value =
                 tariff.value.toLowerCase();
             document.documentElement.style.overflow = "hidden";
         };
-        const close = modal.querySelector(".deposit-modal__close-btn");
+        const close = modal.getElementsByClassName(
+            "deposit-modal__close-btn"
+        )[0];
         close.onclick = () => {
-            modal.classList.remove("show");
+            modal.className = "deposit-modal";
             document.documentElement.style.overflow = "auto";
         };
     }
+    function withdraw() {}
+    withdraw();
     deposit();
     history();
     payTariff();
@@ -278,6 +289,11 @@ function referralLink() {
         setTimeout(() => reflink.classList.remove("success"), 2000);
     });
 }
+function preloader() {
+    window.addEventListener("load", (e) =>
+        document.body.classList.add("loaded")
+    );
+}
 document.addEventListener("DOMContentLoaded", (e) => {
     faq();
     contacts();
@@ -285,5 +301,7 @@ document.addEventListener("DOMContentLoaded", (e) => {
     customSelects();
     calculator();
     referralLink();
-    window.innerWidth >= 1240 ? profile() : mobileProfile();
+    profile();
+    preloader();
+    // window.innerWidth >= 1240 ? profile() : mobileProfile();
 });

@@ -1,15 +1,52 @@
 <?php
 return [
-    'q1' => '<div class="question">Mit welchen Zahlungssystemen arbeitet Unique zusammen?</div>
-    <div class="answer">Das Unternehmen arbeitet mit dem Zahlungssystem Perfect Money</div>',
-    'q2' => '<div class="question">Wie viele Tarifpläne sind in einem persönlichen Schrank anschließbar?</div>
-    <div class="answer">Sie können alle verfügbaren Tarife in einen persönlichen Schrank einbinden.</div>',
-    'q3' => '<div class="question">Wie lange erhalte ich im Versicherungsfall die Versicherungszahlungen auf die Einlage und die aufgelaufenen Zinsen?</div>
-    <div class="answer">Innerhalb von 48 Stunden werden alle Versicherungszahlungen auf das E-Wallet des Anlegers zurückerstattet</div>',
-    'q4' => ' <div class="question">In what currency can I invest?</div>
-    <div class="answer">Investment deposits are accepted in $</div>',
-    'q5' => '<div class="question">Erhebt die Gesellschaft zusätzliche Provisionen?</div>
-    <div class="answer">Die Investmentgesellschaft Unique erhebt keine zusätzliche Gebühr für die Abhebung von Zinsen und Einlagen (gemäß den von der Gesellschaft festgelegten Bedingungen für die Einlage)</div>',
-    'q6' => '<div class="question">Kann ich von einer nicht verifizierten Geldbörse aus investieren?</div>
-    <div class="answer">Die Investmentgesellschaft Unique arbeitet auch mit nicht verifizierten Geldbörsen</div>'
+    'title' => 'Häufig gestellte Fragen:',
+    'q1' => '<p>
+    Wie lange nach der Auszahlungsanfrage werden die Zinsen und die Einzahlung eingehen
+    an mein Portemonnaie?
+  </p>
+  <p>
+  Die Kaution sowie die Zinsen auf die Kaution erhalten Sie innerhalb einer Stunde,
+  jedoch nicht später als einen Werktag
+  </p>',
+    'q2' => ' <p>
+    Kann ich mehrere persönliche Konten von einem registrieren
+    IP-Adressen?
+  </p>
+  <p>
+  Unser Unternehmen erlaubt die Registrierung einer oder mehrerer Personen
+  Schränke von einer IP-Adresse
+  </p>',
+    'q3' => '<p>
+    Über welches Zahlungssystem kann ich eine Einzahlung tätigen?
+    Aster?
+  </p>
+  <p>
+  Die Investmentgesellschaft Aster akzeptiert und zahlt Einlagen
+  über das Zahlungssystem Perfect Money
+  </p>',
+    'q4' => '  <p>In welche Währung kann ich investieren?</p>
+    <p>
+    Die Investmentgesellschaft Aster akzeptiert und zahlt Einlagen
+    zu Perfect Money USD
+    </p>',
+    'q5' => '<p>
+    Kann ich von meinem Wallet aus eine Einzahlung für eine andere Person eröffnen?
+  </p>
+  <p>
+  Ein Investor kann währenddessen eine Einlage für eine andere Person eröffnen
+  indem Sie sich an den technischen Support wenden
+  </p>',
+    'q6' => '<p>
+    Das Unternehmen erhebt bei der Registrierung eine zusätzliche Provision
+     Privatkonto, Auszahlung der Kaution und Zinsen auf die Kaution?
+  </p>
+  <p>
+  Registrierung eines persönlichen Kontos bei der Investmentgesellschaft Aster
+  kostenlos. Wir berechnen keine zusätzlichen Gebühren für
+  Einzahlung und Auszahlung der Einzahlung und Zinsen auf die Einzahlung von Ihnen
+  persönliches Konto
+  </p>',
+  'q7' => '<p>Was sind Werktage?</p>
+  <p>Werktage sind alle Wochentage außer Sonntag</p>'
 ];

@@ -27,7 +27,7 @@ class AdminController extends Controller
     public function userInfo($id)
     {
         $user = User::find($id);
-        $tariff_plans = TariffPlan::all()->where('title', '<>', 'Omega');
+        $tariff_plans = TariffPlan::all()->where('title', '<>', 'Invest Case');
         $tariff_plan_ids = explode(',', $user->tariff_plan);
         $acquired_plans = [];
         $available_plans = [];

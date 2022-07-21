@@ -36,7 +36,7 @@ class SendMessage extends Mailable
     public function build()
     {
         // dd($this->message);
-        return $this->from('info@unique-ibc.com')
+        return $this->from('info@valians-finance.com')
             ->subject($this->subject)
             ->with([
                 'content' => $this->content,

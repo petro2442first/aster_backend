@@ -11,11 +11,11 @@ const mix = require("laravel-mix");
  |
  */
 
-mix.js("resources/js/app.js", "public")
-    .js("resources/js/admin.js", "public")
-    .sass("resources/style/style.scss", "public")
+mix.js("resources/js/app.js", "public/app.js")
+    .js("resources/js/admin.js", "public/admin.js")
+    .sass("resources/style/style.scss", "public/style.css")
     .options({
-        autoprefixer: "last 3 versions",
+        autoprefixer: "last 8 versions",
     })
     .copyDirectory("resources/assets", "public/images")
     .browserSync({

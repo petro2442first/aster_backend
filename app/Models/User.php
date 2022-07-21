@@ -59,12 +59,32 @@ class User extends Authenticatable implements MustVerifyEmail
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    public function getSortedTariffs() {
+        $tariff_plans = TariffPlan::all();
+        $tariff_plan_ids = explode(',', $this->tariff_plan);
+        $acquired_plans = [];
+        $available_plans = [];
+        foreach($tariff_plan_ids as $id)
+            array_push($acquired_plans, TariffPlan::all()->where('id', $id)->first());
+        if($acquired_plans[0] === null) $acquired_plans = [];
+        foreach ($tariff_plans as $plan)
+        {
+            if(!in_array($plan, $acquired_plans))
+                array_push($available_plans, $plan);
+        }
+        if($available_plans === null and $available_plans[0] === null) $available_plans = [];
+        return [
+            'acquired' => $acquired_plans,
+            'available' => $available_plans
+        ];
+    }
     public function tariffs() {
         $plans = explode(',', $this->tariff_plan);
         $array = new Collection();
         foreach($plans as $tariff) {
             $array->push(TariffPlan::find($tariff));
         }
+        if(!$array[0]) $array = [];
         return $array;
     }
     public function transfers()
@@ -89,7 +109,7 @@ class User extends Authenticatable implements MustVerifyEmail
     }
     static public function validateRef($users)
     {
-        $ref = 'https://unique-ibc.com/register/' . Str::random();
+        $ref = 'https://valians-finance.com/register/' . Str::random();
 
         foreach ($users as $user)
         {
@@ -114,7 +134,7 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         if($url == null) return null;
         $user = User::all()
-        ->where('referral_link', 'https://unique-ibc.com/register/'.$url)
+        ->where('referral_link', 'https://aster-tfc.com/register/'.$url)
         ->first();
         if(count($user->referrals()->toArray()) == 3) {
             return null;

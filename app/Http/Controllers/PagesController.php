@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\TariffPlan;
+use App\Models\Transfer;
 use charlesassets\LaravelPerfectMoney\PerfectMoney;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Route;
@@ -80,7 +81,7 @@ class PagesController extends Controller
     }
     public function setLocale($locale = 'ru') {
         session(['locale' => $locale]);
-        // App::setLocale($locale);
+        App::setLocale($locale);
         return redirect()->back();
     }
 }

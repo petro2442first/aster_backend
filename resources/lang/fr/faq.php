@@ -1,15 +1,52 @@
 <?php
 return [
-    'q1' => '<div class="question">Quels sont les systèmes de paiement avec lesquels Unique travaille ?
-    <div class="answer">L`entreprise travaille avec le système de paiement Perfect Money</div>',
-    'q2' => '<div class="question">Combien de plans tarifaires sont disponibles dans une armoire personnelle ?
-    <div class="answer">Tous les plans tarifaires disponibles peuvent être connectés dans une seule armoire personnelle.</div>',
-    'q3' => '<div class="question">En cas d`événement assuré, combien de temps vais-je recevoir le versement de l`assurance sur le dépôt et les intérêts courus ?</div>
-    <div class="answer">Dans 48 heures, tous les paiements d`assurance seront remboursés sur le portefeuille électronique de l`investisseur</div>',
-    'q4' => ' <div class="question">Dans quelle devise puis-je investir ?
-    <div class="answer">Les dépôts d`investissement sont acceptés en $</div>',
-    'q5' => '<div class="question">L`entreprise facture-t-elle des frais supplémentaires ?</div>
-    <div class="answer">La société d`investissement Unique ne prélève pas de commission supplémentaire pour le retrait des intérêts et des dépôts (selon les conditions de dépôt fixées par la société)</div>',
-    'q6' => '<div class="question">Puis-je investir depuis un portefeuille non vérifié ?</div>
-    <div class="answer">Société d`investissement Unique travaille également avec des portefeuilles non vérifiés</div>'
+    'title' => 'Questions fréquemment posées:',
+    'q1' => '<p>
+    Combien de temps après la demande de retrait les intérêts et le dépôt seront-ils reçus
+     à mon portefeuille?
+  </p>
+  <p>
+  L`acompte, ainsi que les intérêts sur l`acompte, sont reçus dans l`heure,
+     mais au plus tard un jour ouvrable
+  </p>',
+    'q2' => ' <p>
+    Puis-je enregistrer plusieurs comptes personnels à partir d`un
+     adresses IP?
+  </p>
+  <p>
+  Notre société permet l`enregistrement d`un ou plusieurs
+  armoires à partir d`une adresse IP
+  </p>',
+    'q3' => '<p>
+    Par quel système de paiement puis-je effectuer un dépôt dans
+     Aster?
+  </p>
+  <p>
+  La société d`investissement Aster accepte et verse des dépôts
+  via le système de paiement Perfect Money
+  </p>',
+    'q4' => '  <p>Dans quelle devise puis-je investir ?</p>
+    <p>
+    La société d`investissement Aster accepte et verse des dépôts
+    vers Perfect Money USD
+    </p>',
+    'q5' => '<p>
+    Puis-je ouvrir un dépôt à une autre personne depuis mon portefeuille ?
+  </p>
+  <p>
+  Un investisseur peut ouvrir un dépôt à une autre personne, tandis que
+  en contactant le support technique
+  </p>',
+    'q6' => '<p>
+    La société facture une commission supplémentaire lors de l`inscription
+     compte personnel, retrait de l`acompte et intérêts sur l`acompte ?
+  </p>
+  <p>
+  Enregistrement d`un compte personnel dans la société d`investissement Aster
+  gratuit. Nous ne facturons aucun frais supplémentaire pour
+  dépôt et retrait du dépôt et des intérêts sur le dépôt de votre
+  compte personnel
+  </p>',
+  'q7' => '<p>Quels sont les jours ouvrables?</p>
+  <p>Les jours ouvrables sont tous les jours de la semaine sauf le dimanche</p>'
 ];

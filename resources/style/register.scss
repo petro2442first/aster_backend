@@ -1,99 +1,114 @@
 @include form("register");
-.register {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 70px;
-  &__close {
-    width: 28px;
-    height: 28px;
-    cursor: pointer;
-    position: absolute;
-    top: 30px;
-    right: 30px;
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      display: block;
+.verification {
+    .form-container {
+        button {
+            @extend %btn;
+            margin-top: 25px;
+        }
     }
-  }
-  &__container {
-    position: relative;
-    padding: 50px;
-    max-width: 540px;
-    background: rgba(0, 0, 0, 0.85);
-    border-radius: 34px;
+}
+.errors {
+    li {
+        margin-top: 10px;
+        color: rgb(255, 79, 79);
+        font-weight: bold;
+    }
+}
+.register {
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-  }
-  &__title {
-    font-family: "Raleway";
-    font-style: normal;
-    font-weight: 600;
-    font-size: 36px;
-    line-height: 42px;
-    text-transform: uppercase;
-    color: rgba(138, 248, 255, 0.89);
-    text-align: center;
-  }
-  &__description {
-    font-family: "Raleway";
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 28px;
-    text-align: center;
-    margin-top: 14px;
-    color: #ffffff;
-  }
-  &__form {
-    padding-bottom: 0;
-    padding-top: 50px;
-    margin-left: 0;
-  }
-  &__checkbox {
-    padding-left: 32px;
-    display: flex;
-    flex-direction: row-reverse;
-    width: 100%;
-    label {
-      position: relative;
-      font-family: "Raleway";
-      font-style: normal;
-      font-weight: 500;
-      font-size: 13px;
-      line-height: 15px;
-      width: 100%;
-      margin-top: 25px;
-      color: #ffffff;
-      cursor: pointer;
-      &::before {
-        content: "";
-        display: block;
+    margin-top: 70px;
+    &__close {
+        width: 28px;
+        height: 28px;
+        cursor: pointer;
         position: absolute;
-        width: 18px;
-        height: 18px;
-        background-image: url(../assets/images/unchecked.png);
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: contain;
-        left: -32px;
-        top: 50%;
-        transform: translateY(-50%);
-        transition: 0.3s;
-      }
+        top: 30px;
+        right: 30px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+        }
     }
-    input {
-      opacity: 0;
-      visibility: hidden;
-      width: 0;
-      height: 0;
-      &:checked + label::before {
-        background-image: url(../assets/images/checked.png);
-      }
+    &__container {
+        position: relative;
+        padding: 50px;
+        max-width: 540px;
+        background: rgba(0, 0, 0, 0.85);
+        border-radius: 34px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
-  }
+    &__title {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 600;
+        font-size: 36px;
+        line-height: 42px;
+        text-transform: uppercase;
+        color: rgba(138, 248, 255, 0.89);
+        text-align: center;
+    }
+    &__description {
+        font-family: "Raleway";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+        text-align: center;
+        margin-top: 14px;
+        color: #ffffff;
+    }
+    &__form {
+        padding-bottom: 0;
+        padding-top: 50px;
+        margin-left: 0;
+    }
+    &__checkbox {
+        padding-left: 32px;
+        display: flex;
+        flex-direction: row-reverse;
+        width: 100%;
+        label {
+            position: relative;
+            font-family: "Raleway";
+            font-style: normal;
+            font-weight: 500;
+            font-size: 13px;
+            line-height: 15px;
+            width: 100%;
+            margin-top: 25px;
+            color: #ffffff;
+            cursor: pointer;
+            &::before {
+                content: "";
+                display: block;
+                position: absolute;
+                width: 18px;
+                height: 18px;
+                background-image: url(../assets/images/unchecked.png);
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: contain;
+                left: -32px;
+                top: 50%;
+                transform: translateY(-50%);
+                transition: 0.3s;
+            }
+        }
+        input {
+            opacity: 0;
+            visibility: hidden;
+            width: 0;
+            height: 0;
+            &:checked + label::before {
+                background-image: url(../assets/images/checked.png);
+            }
+        }
+    }
 }

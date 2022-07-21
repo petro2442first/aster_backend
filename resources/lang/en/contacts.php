@@ -1,7 +1,7 @@
 <?php
 return [
     'title' => 'Contact us',
-    'c1' => 'Questions about the company, financial advice',
+    'c1' => 'Ask all questions immediately to us!',
     'c2' => 'Authorization, technical support',
     'c3' => 'Administrator',
     'c4' => 'Fill in the fields of the form and send a message:',

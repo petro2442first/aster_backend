@@ -12,7 +12,7 @@ return [
     'deposit' => 'Dépôt de fonds',
     'deposit_notify' => 'Les dépôts sont uniquement disponibles pour les utilisateurs vérifiés.',
     'withdraw' => 'Retirer ',
-    'withdraw_notify1' => 'Le retrait n`est possible qu`après l`achat d`un tarif standard à partir de 50$ ou après la fin des termes de tout autre tarif.',
+    'withdraw_notify1' => 'Le retrait n`est disponible qu`après l`achat du tarif et après son expiration',
     'withdraw_notify2' => 'Le retrait est possible après l`expiration de votre tarif.',
     'withdraw_notify3' => 'Vous avez déjà envoyé une demande de retrait.',
     'withdraw_notify4' => 'Le retrait est possible à partir de 50$.',
@@ -36,6 +36,8 @@ return [
     'withdrawed' => 'Retrait de fonds',
     'no_operations' => 'Aucune opération',
     'withdraw_sum' => 'Montant à retirer',
-    'main__info' => 'Si vous déposez plus de 300 $, vous devez contacter le support technique.',
-    'see_all' => 'Voir tous'
+    'main__info' => 'Si vous déposez plus de 200 $, vous devez contacter le support technique.',
+    'see_all' => 'Voir tous',
+    'support' => 'Soutien',
+    'save_photo' => 'Ajouter une photo'
 ];

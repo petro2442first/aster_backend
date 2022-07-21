@@ -1,0 +1,764 @@
+@media screen and (max-width: 1300px) {
+  .profile {
+    transform: scale(0.95);
+  }
+}
+@media screen and (max-width: 1150px) {
+  body.register-body .header__nav .nav-list {
+    justify-content: flex-start;
+  }
+  body.register-body .header__nav .nav-item:not(.nav-logo) {
+    display: flex;
+  }
+  body.register-body .header__nav .nav-item.nav-logo {
+    position: static;
+    transform: none;
+    top: 0;
+    left: 0;
+  }
+  .wrapper {
+    max-width: 100%;
+    padding: 40px;
+  }
+  .logo {
+    display: block;
+  }
+  .header__nav .burger {
+    display: block;
+    transition: 0.3s;
+  }
+  .header__nav .nav-list {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: -275px;
+    top: 0;
+    width: 275px;
+    background: #000;
+    height: 100vh;
+    padding: 80px 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: 0.3s;
+    z-index: 9999;
+  }
+  .header__nav .nav-item + li {
+    margin-top: 55px;
+  }
+  .header__nav .nav-item.current a {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 32px;
+    color: rgba(138, 248, 255, 0.89);
+    white-space: nowrap;
+  }
+  .header__nav .nav-item a {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .header__nav .nav-item.nav-logo {
+    order: -1;
+    margin-bottom: 75px;
+  }
+  .header__nav .nav-item.nav-logo a {
+    width: 100%;
+  }
+  .header__nav .nav-item.nav-logo a .logo-description {
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .header__nav .nav-item.nav-logo a .logo-title {
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+  }
+  .header__nav .nav-item.nav-lang {
+    border-top: 1px solid #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+  }
+  .header__nav.show .burger {
+    transform: translateX(-275px);
+  }
+  .header__nav.show .nav-list {
+    opacity: 1;
+    visibility: visible;
+    right: 0;
+  }
+  .contacts .contacts-info__item p {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .tariffs__container .tariff-item {
+    width: 315px;
+    padding: 15px;
+    padding-bottom: 25px;
+  }
+  .tariffs__container .tariff-item__row:nth-child(2) {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 10px;
+  }
+  .tariffs__container .tariff-item__price {
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 22px;
+  }
+  .tariffs__container .tariff-item__period {
+    font-size: 14px;
+    line-height: 17px;
+  }
+  .tariffs__container .tariff-item__percents {
+    font-size: 14px;
+    line-height: 17px;
+    align-self: flex-end;
+  }
+  .about__row {
+    width: 100%;
+    height: 255px;
+    padding-right: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .about__row p {
+    margin-left: 80px;
+  }
+  .about__row:first-child {
+    padding: 0 80px;
+  }
+  .about__row:first-child img {
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: 90%;
+    height: 90%;
+    -o-object-position: center center;
+       object-position: center center;
+  }
+  .about__row:nth-child(2n) {
+    flex-direction: row-reverse;
+    padding-right: 0;
+    padding-left: 80px;
+    background: rgba(0, 0, 0, 0.56);
+  }
+  .about__row:nth-child(2n) p {
+    margin-left: 0;
+    margin-right: 80px;
+  }
+  .about__row:nth-child(3) {
+    padding: 0 80px;
+  }
+  .about__row:nth-child(3) p {
+    max-width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+  .pm {
+    grid-template-areas: "info" "block";
+  }
+  .pm__menu {
+    display: contents;
+  }
+  .pm__menu-burger {
+    display: block;
+    transition: 0.3s;
+  }
+  .pm__menu-list {
+    position: fixed;
+    z-index: 99999;
+    visibility: hidden;
+    opacity: 0;
+    right: -275px;
+    top: 0;
+    width: 275px;
+    background: #000;
+    height: 100vh;
+    padding: 80px 30px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: 0.3s;
+  }
+  .pm__menu-item {
+    justify-content: flex-start;
+  }
+  .pm__menu-item + li {
+    margin-top: 30px;
+  }
+  .pm__menu-item.active a {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 32px;
+    color: rgba(138, 248, 255, 0.89);
+    white-space: nowrap;
+  }
+  .pm__menu-item a {
+    font-weight: 600;
+    text-align: left;
+  }
+  .pm__menu.show .pm__menu-burger {
+    transform: translateX(-275px);
+  }
+  .pm__menu.show .pm__menu-list {
+    opacity: 1;
+    visibility: visible;
+    right: 0;
+  }
+  .profile {
+    flex-direction: column;
+  }
+  .profile .deposits .tariffs__container .tariff-item {
+    width: 100%;
+  }
+  .profile__logout button {
+    margin-top: 20px;
+  }
+  .profile__container {
+    margin-left: 0;
+    margin-top: 25px;
+  }
+  .pay-tariff-modal__container {
+    padding: 30px;
+  }
+}
+@media screen and (max-width: 900px) {
+  body.contacts-body {
+    background-image: url(../../assets/images/bg-contacts-mobile-2.png);
+  }
+  .about__row {
+    width: 100%;
+    height: 255px;
+    padding-right: 200px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  .about__row p {
+    margin-left: 40px;
+  }
+  .about__row:first-child {
+    padding: 0 40px;
+  }
+  .about__row:first-child img {
+    -o-object-fit: contain;
+       object-fit: contain;
+    width: 90%;
+    height: 90%;
+    -o-object-position: center center;
+       object-position: center center;
+  }
+  .about__row:nth-child(2n) {
+    flex-direction: row-reverse;
+    padding-right: 0;
+    padding-left: 40px;
+    background: rgba(0, 0, 0, 0.56);
+  }
+  .about__row:nth-child(2n) p {
+    margin-left: 0;
+    margin-right: 40px;
+  }
+  .about__row:nth-child(3) {
+    padding: 0 40px;
+  }
+  .about__row:nth-child(3) p {
+    max-width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+  .contacts .feedback {
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    flex-direction: column;
+    align-items: center;
+  }
+  .contacts .feedback::before {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0) 0.58%, #000000 40.14%, #000000 50.14%, rgba(0, 0, 0, 0) 99.93%);
+    background-size: 100% 375px;
+    background-repeat: no-repeat;
+  }
+  .contacts .feedback__thumb {
+    height: 222px;
+    width: 100%;
+  }
+  .contacts .feedback__form {
+    margin-left: 0;
+  }
+  .profile__container {
+    min-width: 768px;
+    grid-template-areas: "title ." "row row" "dep  dep" "calc ref" "calc ref" "hist supp" "hist supp";
+    grid-template-rows: 42px 200px auto auto auto;
+  }
+  .profile__container .deposits {
+    max-width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .profile__container .deposits::after {
+    content: none;
+  }
+  .profile__container .deposits .tariffs__container {
+    max-height: 375px;
+  }
+  .profile__container .referrals {
+    flex-direction: column;
+  }
+  .profile__row {
+    flex-direction: column;
+    height: 100%;
+  }
+  .profile__row .referral-link {
+    border-left: none;
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .pay-tariff-modal__container {
+    padding: 20px;
+  }
+  .pay-tariff-modal__title {
+    font-size: 30px;
+  }
+  .pay-tariff-modal__row .tariffs {
+    overflow-x: hidden;
+  }
+  .pay-tariff-modal__row .tariffs .tariffs__container {
+    overflow-x: hidden;
+  }
+  .pay-tariff-modal__row .tariffs .tariffs__container .tariff-item {
+    width: 100%;
+  }
+  .deposit-modal__title {
+    font-size: 26px;
+  }
+}
+@media screen and (max-width: 768px) {
+  body {
+    background-image: url(../../assets/images/bg-main-mobile.png);
+  }
+  body.main-body .footer {
+    margin-top: 250px;
+  }
+  body.tariffs-body {
+    background-position: center 200px;
+  }
+  body.contacts-body .wrapper::after {
+    background-image: url(../../assets/images/bg-contacts-mobile.png);
+  }
+  .wrapper {
+    width: 100%;
+    padding: 55px 30px;
+  }
+  .wrapper::after {
+    height: 765px !important;
+    max-height: 765px !important;
+  }
+  .logo {
+    width: 157px;
+    margin-top: 50px;
+  }
+  .main-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 200px;
+  }
+  .main-container .main-logo {
+    padding-bottom: 325px;
+  }
+  .main-container .home-description {
+    text-align: center;
+  }
+  .main-container .home-register-btn {
+    margin-top: 130px;
+  }
+  .footer {
+    width: calc(100% - 60px);
+  }
+  .about p {
+    padding: 30px;
+  }
+  .about__row {
+    width: 100%;
+    height: -webkit-fit-content;
+    height: -moz-fit-content;
+    height: fit-content;
+    padding-right: 200px;
+    display: flex;
+    flex-direction: column !important;
+    align-items: center;
+  }
+  .about__row p {
+    margin-left: 0px;
+    text-align: center;
+  }
+  .about__row:first-child {
+    padding: 0 0px;
+  }
+  .about__row:first-child img {
+    width: 100%;
+    -o-object-fit: contain;
+       object-fit: contain;
+    height: 106px;
+    -o-object-position: center center;
+       object-position: center center;
+  }
+  .about__row:nth-child(2n) {
+    flex-direction: row-reverse;
+    padding-right: 0;
+    padding-left: 0px;
+    background: transparent;
+  }
+  .about__row:nth-child(2n) p {
+    margin-left: 0;
+    margin-right: 0px;
+  }
+  .about__row:nth-child(3) {
+    padding: 0 0px;
+  }
+  .about__row:nth-child(3) p {
+    max-width: 100%;
+    text-align: center;
+    margin-left: 0;
+  }
+  .about__description {
+    display: none;
+  }
+  .faq__item p:nth-child(2) {
+    padding-left: 0;
+  }
+  .contacts__row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .contacts__map {
+    height: 395px;
+  }
+  .contacts .tech-support {
+    margin-left: 0;
+    margin-top: 75px;
+  }
+  .pm__info {
+    background: none;
+  }
+  .pm__main .finance {
+    grid-template-areas: "bal bal" "inc inc" "pay out";
+  }
+  .pm__main .finance__balance {
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .pm__main .finance__balance p:nth-child(2) {
+    margin-top: 0;
+    margin-left: 20px;
+  }
+  .pm__main .finance__income {
+    width: 100%;
+    justify-content: space-between;
+    flex-direction: row;
+  }
+  .pm__main .finance__income p:nth-child(2) {
+    margin-top: 0;
+    margin-left: 20px;
+  }
+  .pm__main .deposits {
+    width: 100%;
+    padding: 0;
+  }
+  .pm__main .deposits__title {
+    padding: 0 15px;
+    margin-bottom: 15px;
+  }
+  .pm__main .deposits__list {
+    padding: 20px;
+  }
+  .pm__main .deposits__list .tariff-item {
+    width: 100%;
+    margin: 0;
+  }
+  .pm__main .deposits__list .tariff-item + div {
+    margin-top: 20px;
+  }
+  .pm__main .deposits__list::-webkit-scrollbar {
+    width: 0;
+  }
+  body.profile-body {
+    padding: 10px;
+  }
+  .profile {
+    width: 100%;
+  }
+  .profile__container {
+    padding: 30px 10px;
+    min-width: auto;
+    grid-template-areas: "title .  " "row row" "row row" "dep  dep" "dep  dep" "calc calc" "ref ref" "hist hist" "supp supp";
+  }
+  .profile__container .deposits::after {
+    content: none;
+  }
+  .profile__row {
+    flex-direction: column;
+    height: auto;
+  }
+  .pay-tariff-modal__title {
+    font-size: 20px;
+  }
+  .pay-tariff-modal__close-btn {
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    right: 15px;
+  }
+  .pay-tariff-modal__row .tariffs h2 {
+    font-size: 16px;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item {
+    border-radius: 15px;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__period {
+    display: none;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__price {
+    font-size: 14px;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__title {
+    font-size: 18px;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__percents {
+    align-self: center;
+  }
+  .pay-tariff-modal__row .payment {
+    margin-left: 20px;
+  }
+  .pay-tariff-modal__row .payment form .tariffs__container .tariff-item {
+    width: 150px;
+  }
+  .pay-tariff-modal__row .payment__description {
+    font-size: 14px;
+    max-width: 200px;
+  }
+  .pay-tariff-modal__row .payment__value {
+    width: 100%;
+  }
+  .pay-tariff-modal__row .payment__value input {
+    font-size: 14px;
+  }
+  .deposit-modal__title {
+    font-size: 20px;
+  }
+  .deposit-modal__close-btn {
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    right: 15px;
+  }
+}
+@media screen and (max-width: 600px) {
+  body.profile-body {
+    padding: 10px 0;
+  }
+  .profile__container {
+    width: 100%;
+  }
+  .profile__container .tariffs__container {
+    width: 100%;
+    padding: 0 20px 0 0;
+  }
+  .profile__container .tariffs__container .tariff-item {
+    width: 100%;
+  }
+  .profile__container .deposits {
+    padding: 20px 10px;
+  }
+  .profile__container .deposits__list > div {
+    min-height: 125px;
+  }
+  .pay-tariff-modal__title {
+    font-size: 20px;
+  }
+  .pay-tariff-modal__close-btn {
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    right: 15px;
+  }
+  .pay-tariff-modal__row .tariffs h2 {
+    font-size: 14px;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item {
+    border-radius: 10px;
+    box-shadow: none;
+    margin: 15px 0;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__period {
+    display: none;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__price {
+    font-size: 12px;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__title {
+    font-size: 14px;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__percents {
+    align-self: center;
+    font-size: 12px;
+  }
+  .pay-tariff-modal__row .payment {
+    margin-left: 10px;
+    padding: 0;
+  }
+  .pay-tariff-modal__row .payment form .tariffs__container .tariff-item {
+    width: 120px;
+  }
+  .pay-tariff-modal__row .payment__description {
+    font-size: 12px;
+    max-width: 120px;
+  }
+  .pay-tariff-modal__row .payment__value {
+    width: 100%;
+  }
+  .pay-tariff-modal__row .payment__value input {
+    font-size: 12px;
+    padding: 10px;
+  }
+  .history-modal__date {
+    font-size: 14px;
+  }
+  .history-modal__value {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 425px) {
+  body.profile-body {
+    padding: 10px 0;
+  }
+  .profile__container {
+    width: 100%;
+  }
+  .profile__container .tariffs__container {
+    width: 100%;
+    padding: 0 20px 0 0;
+  }
+  .profile__container .tariffs__container .tariff-item {
+    width: 100%;
+  }
+  .profile__container .deposits {
+    padding: 20px 10px;
+  }
+  .profile__container .deposits__list > div {
+    min-height: 125px;
+  }
+  .profile__row .choose-tariff {
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile__row .choose-tariff .custom-select-container {
+    margin-left: 75px;
+  }
+  .pay-tariff-modal__title {
+    font-size: 20px;
+  }
+  .pay-tariff-modal__close-btn {
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    right: 15px;
+  }
+  .pay-tariff-modal__row .tariffs h2 {
+    font-size: 14px;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item {
+    border-radius: 10px;
+    box-shadow: none;
+    margin: 15px 0;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__period {
+    display: none;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__price {
+    font-size: 12px;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__title {
+    font-size: 14px;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__percents {
+    align-self: center;
+    font-size: 12px;
+  }
+  .pay-tariff-modal__row .payment {
+    margin-left: 10px;
+    padding: 0;
+  }
+  .pay-tariff-modal__row .payment form .tariffs__container .tariff-item {
+    width: 120px;
+  }
+  .pay-tariff-modal__row .payment__description {
+    font-size: 12px;
+    max-width: 120px;
+  }
+  .pay-tariff-modal__row .payment__value {
+    width: 100%;
+  }
+  .pay-tariff-modal__row .payment__value input {
+    font-size: 12px;
+    padding: 10px;
+  }
+  .history-modal__date {
+    font-size: 14px;
+  }
+  .history-modal__value {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 375px) {
+  body.profile-body {
+    padding: 15px;
+  }
+  .register,
+.login {
+    transform-origin: center 0;
+    transform: scale(0.9);
+  }
+  .register__close,
+.login__close {
+    right: 35px;
+  }
+}
+@media screen and (max-height: 700px) {
+  .header__nav .nav-item + li {
+    margin-top: 25px;
+  }
+}
+@media screen and (max-width: 320px) {
+  .register,
+.login {
+    transform-origin: center 0;
+    transform: scale(0.8);
+  }
+  .register__close,
+.login__close {
+    right: 45px;
+  }
+}/*# sourceMappingURL=style.css.map */

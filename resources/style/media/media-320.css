@@ -1,0 +1,11 @@
+@media screen and (max-width: 320px) {
+  .register,
+.login {
+    transform-origin: center 0;
+    transform: scale(0.8);
+  }
+  .register__close,
+.login__close {
+    right: 45px;
+  }
+}/*# sourceMappingURL=media-320.css.map */

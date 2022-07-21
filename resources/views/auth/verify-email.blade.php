@@ -1,5 +1,5 @@
-<x-app-layout title="Verify e-mail">
-    <main class="content verification">
+<x-app-layout title="Подтверждение E-Mail">
+    <main class="verification">
         <form style="margin-top: 50px" class="sign-form" method="POST" action="{{ route('verification.send') }}">
             @csrf
             <div class="form-container">
@@ -29,3 +29,4 @@
         </form>
     </main>
 </x-app-layout>
+

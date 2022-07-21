@@ -1,11 +1,30 @@
 <?php
 return [
-    'title' => 'Was sind wir?',
-    'p1' => 'Die Unique Investment Group ist ein Partner der GlobalFoundries Inc. aus den Vereinigten Staaten, die integrierte Halbleiterschaltungen und Chips herstellt. Dieses Unternehmen wiederum wurde am 2. März 2009 gegründet. Es umfasst Fabriken für die Herstellung von Halbleitern, die sich auf der ganzen Welt befinden (USA, China, Deutschland, Frankreich, Korea, Taiwan, Indien, Japan, Singapur). Auch in naher Zukunft eröffnet eine Fabrik in Abu Dhabi.',
-    'p2' => 'Laut Trend Force war die Unique Investment Group Ende 2020 der zweitgrößte Auftragshersteller von Halbleiterchips mit einem Marktanteil von 14,8 %.',
-    'p3' => '',
-    'p4' => 'Aufgrund der gestiegenen Nachfrage nach Halbleitern und Chips im Jahr 2021 werden diese an weltbekannte Unternehmen wie Broadcom, Qualcomm, AMD, IBM sowie an die Automobilkonzerne Jaguar, Range Rover und mehrere andere große Automobilhersteller geliefert. Auf einer Sitzung des Verwaltungsrats, in dem Unique eine paritätische Beteiligung hält, wurde beschlossen, einen Investitionsbereich für private Investoren zu eröffnen. Ihre Finanzmittel werden in die Produktion des bestehenden Werks auf der Insel Taiwan fließen, um die Produktionskapazität zu erhöhen sowie das Volumen des Einkaufs und der Lieferung von Rohstoffen aus Seltenerdmetallen zu steigern, die bei der Herstellung von integrierten Halbleiterschaltungen und Chips verwendet werden. Unique bietet Investoren günstige Konditionen mit einem hohen Zinssatz auf alle vertretenen Tarifpläne.',
-    'p5' => 'Einzigartige Garantien für die Rückzahlung der Investitionen Langfristige Partnerschaft zu für beide Seiten vorteilhaften Bedingungen.',
+    'title' => 'Über uns',
+    'p1' => '  Aster ist seit kurzem eine Handels- und Investmentgesellschaft
+    hat seine Tätigkeit aufgenommen, hat es aber bereits geschafft, ein Hoch zu zeigen
+    Koeffizient erfolgreicher und rentabler Transaktionen für Investoren,
+    die Finanzen unseres Unternehmens anvertraut.',
+    'p2' => ' Das Personal von Aster besteht aus professionellen Händlern und
+    effektive Manager mit langjähriger Erfahrung
+    Finanz- und Wirtschafts- sowie Austauschaktivitäten. Erfahrung
+    Arbeit der Mitarbeiter unseres Unternehmens seit mindestens zwanzig Jahren.',
+    'p3' => 'Der Unterschied zwischen Aster und anderen Handels- und Investmentgesellschaften
+    liegt darin, dass alle Handlungen unserer Mitarbeiter sind
+    verifizierter und professionell berechneter Aktionsalgorithmus,
+    Dank dessen zeigt Aster am effizientesten und
+    finanziell rentable Anzahl von Tauschgeschäften. Die Transaktionsdaten
+    wiederum bringen den Anlegern tägliche stabile Einnahmen
+    unseres Unternehmens und erhöht damit die Kapitalisierung der
+    Unternehmen, das es Aster-Investoren ermöglicht, finanziell zu sein
+    trotz täglicher Schwankungen zuversichtlich in die Zukunft
+    Aktienkurse.',
+    'p4' => 'Aster - auf langfristige Zusammenarbeit ausgerichtet und
+    garantiert den Anlegern die Stabilität der Verzinsung der Gewinne
+    und Pünktlichkeit der Zahlungen auf Anzahlungen sowie auf alle genommenen
+    über Investitionsverpflichtungen.',
+    'p5' => '<span>Aster</span> steht für Stabilität und finanzielle Unabhängigkeit
+    jeder Anleger.',
     'p6' => '
     Die Unique Investment Group freut sich auf eine langfristige Partnerschaft zu für beide Seiten vorteilhaften Bedingungen.
     '

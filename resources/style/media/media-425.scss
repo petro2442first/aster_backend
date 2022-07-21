@@ -1,0 +1,108 @@
+@media screen and (max-width: 425px) {
+    body {
+        &.profile-body {
+            padding: 10px 0;
+        }
+    }
+    .profile {
+        &__container {
+            width: 100%;
+            .tariffs__container {
+                width: 100%;
+                padding: 0 20px 0 0;
+                .tariff-item {
+                    width: 100%;
+                }
+            }
+            .deposits {
+                padding: 20px 10px;
+            }
+            .deposits__list {
+                & > div {
+                    min-height: 125px;
+                }
+            }
+        }
+        &__row {
+            .choose-tariff {
+                flex-direction: column;
+                align-items: center;
+                .custom-select-container {
+                    margin-left: 75px;
+                }
+            }
+        }
+    }
+    .pay-tariff-modal {
+        &__title {
+            font-size: 20px;
+        }
+        &__close-btn {
+            width: 30px;
+            height: 30px;
+            top: 15px;
+            right: 15px;
+        }
+        &__row {
+            .tariffs {
+                h2 {
+                    font-size: 14px;
+                }
+                &__container {
+                    .tariff-item {
+                        border-radius: 10px;
+                        box-shadow: none;
+                        margin: 15px 0;
+                        &__period {
+                            display: none;
+                        }
+                        &__price {
+                            font-size: 12px;
+                        }
+                        &__title {
+                            font-size: 14px;
+                        }
+                        &__row {
+                            flex-direction: column;
+                            align-items: center;
+                        }
+                        &__percents {
+                            align-self: center;
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+            .payment {
+                margin-left: 10px;
+                padding: 0;
+                form {
+                    .tariffs__container {
+                        .tariff-item {
+                            width: 120px;
+                        }
+                    }
+                }
+                &__description {
+                    font-size: 12px;
+                    max-width: 120px;
+                }
+                &__value {
+                    width: 100%;
+                    input {
+                        font-size: 12px;
+                        padding: 10px;
+                    }
+                }
+            }
+        }
+    }
+    .history-modal {
+        &__date {
+            font-size: 14px;
+        }
+        &__value {
+            font-size: 14px;
+        }
+    }
+}

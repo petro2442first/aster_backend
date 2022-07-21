@@ -12,11 +12,11 @@ return [
     'deposit' => 'Deposit funds',
     'deposit_notify' => 'Deposites are only available to verified users',
     'withdraw' => 'Withdraw ',
-    'withdraw_notify1' => 'Withdrawal is available only after purchase of Standard tariff from 50$ or after the end of terms of any other tariffs.',
+    'withdraw_notify1' => 'Withdrawal is available only after the purchase of the tariff and after its expiration',
     'withdraw_notify2' => 'Withdrawal is available after your tariff expires.',
     'withdraw_notify3' => 'You have already sent a withdrawal request.',
     'withdraw_notify4' => 'Withdrawal is available from 50$',
-    'refer_link' => 'Referral link:',
+    'refer_link' => 'Referral link',
     'refs' => 'Your referrals',
     'no_refs' => 'No referrals',
     'calc' => 'Profitability calculator',
@@ -36,7 +36,8 @@ return [
     'withdrawed' => 'Withdrawal of funds',
     'no_operations' => 'No operations',
     'withdraw_sum' => 'Amount to withdraw',
-    'main__info' => 'If you deposit more than $300, you need to contact technical support',
+    'main__info' => 'If you deposit more than $200, you need to contact technical support',
     'save_photo' => 'Add photo',
-    'see_all' => 'See all'
+    'see_all' => 'See all',
+    'support' => 'Support'
 ];

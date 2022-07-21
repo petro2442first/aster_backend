@@ -25,7 +25,7 @@ class Transfer extends Model
         $this->appointment = '+';
         $this->value = $value;
         $this->user_id = $user_id;
-        $this->title = 'Paid on your invest cash';
+        $this->title = 'Ваш депозит';
         // $this->date = preg_split('/ /', $this->updated_at)[0];
         $this->date = Carbon::now()->isoFormat('Y-MM-DD');
         $this->saveOrFail();

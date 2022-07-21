@@ -63,65 +63,77 @@ class DatabaseSeeder extends Seeder
 
 
         DB::table('tariff_plans')->insert([
-            'title' => 'Silver',
-            'min_invest' => 100,
-            'max_invest' => 500,
-            'profit' => 0.7,
-            'deposit_term' => 21,
-            'description_ru' => 'Инвестиционные сделки в области коммуникаций и IT технологий',
-            'description_en' => 'Withdrawal is available from $50',
-            'description_zh' => '可从50美元起提现',
-            'description_fr' => 'Retraits disponibles à partir de 50 USD',
-            'description_de' => 'Abhebungen sind ab US$50 möglich'
+            'title' => 'Portfolio 1',
+            'min_invest' => 50,
+            'max_invest' => 300,
+            'profit' => 0.5,
+            'deposit_term' => 14,
+            'description_ru' => 'Инвестиционные сделки в области коммуникаций и IT технолигий',
+            'description_en' => 'Investment transactions in the field of communications and IT technologies',
+            'description_zh' => '通信和IT技术领域的投资交易',
+            'description_fr' => 'Opérations d`investissement dans le domaine des communications et des technologies de l`information',
+            'description_de' => 'Investitionstransaktionen im Bereich der Kommunikations- und IT-Technologien'
         ]);
         DB::table('tariff_plans')->insert([
-            'title' => 'Platinum',
+            'title' => 'Portfolio 2',
+            'min_invest' => 300,
+            'max_invest' => 1000,
+            'profit' => 1,
+            'deposit_term' => 30,
+            'description_ru' => 'Инвестиции в криптовалюту и торгово-валютные сделки',
+            'description_en' => 'Investments in cryptocurrency and trade and currency transactions',
+            'description_zh' => '投资于加密货币以及贸易和货币交易',
+            'description_fr' => 'Investissements dans la crypto-monnaie et les transactions commerciales et monétaires',
+            'description_de' => 'Investitionen in Kryptowährung sowie Handels- und Währungstransaktionen'
+        ]);
+        DB::table('tariff_plans')->insert([
+            'title' => 'Portfolio 3',
             'min_invest' => 1000,
+            'max_invest' => 3000,
+            'profit' => 2,
+            'deposit_term' => 45,
+            'description_ru' => 'Инвестиции в коммерческую недвижимость',
+            'description_en' => 'Investments in commercial real estate',
+            'description_zh' => '商业地产投资',
+            'description_fr' => 'Investissements dans l`immobilier commercial',
+            'description_de' => 'Investitionen in Gewerbeimmobilien'
+        ]);
+
+        DB::table('tariff_plans')->insert([
+            'title' => 'Portfolio 4',
+            'min_invest' => 3000,
             'max_invest' => 5000,
             'profit' => 3,
-            'deposit_term' => 50,
-            'description_ru' => 'Инвестиции в коммерческую недвижимость',
-            'description_en' => 'Withdrawal is available from $50',
-            'description_zh' => '可从50美元起提现',
-            'description_fr' => 'Retraits disponibles à partir de 50 USD',
-            'description_de' => 'Abhebungen sind ab US$50 möglich'
+            'deposit_term' => 60,
+            'description_ru' => 'Инвестиции в ценные бумаги и облигации',
+            'description_en' => 'Investments in securities and bonds',
+            'description_zh' => '证券和债券投资',
+            'description_fr' => 'Placements en titres et obligations',
+            'description_de' => 'Anlagen in Wertpapieren und Obligationen'
         ]);
         DB::table('tariff_plans')->insert([
-            'title' => 'Gold',
-            'min_invest' => 550,
-            'max_invest' => 1000,
-            'profit' => 1.5,
-            'deposit_term' => 40,
-            'description_ru' => ' Инвестиции в криптовалюту и торгово-валютные сделки',
-            'description_en' => 'Withdrawal is available from $50',
-            'description_zh' => '可从50美元起提现',
-            'description_fr' => 'Retraits disponibles à partir de 50 USD',
-            'description_de' => 'Abhebungen sind ab US$50 möglich'
-        ]);
-        DB::table('tariff_plans')->insert([
-            'title' => 'Infinity',
+            'title' => 'Portfolio 5',
             'min_invest' => 5000,
             'max_invest' => 10000,
             'profit' => 5,
-            'deposit_term' => 60,
-            'description_ru' => 'Инвестиции в ценные бумаги и облигации',
-            'description_en' => 'Withdrawal is available from $50',
-            'description_zh' => '可从50美元起提现',
-            'description_fr' => 'Retraits disponibles à partir de 50 USD',
-            'description_de' => 'Abhebungen sind ab US$50 möglich'
+            'deposit_term' => 75,
+            'description_ru' => 'Инвестиции в APO, ICO и нейросети',
+            'description_en' => 'Investments in securities and bonds',
+            'description_zh' => '证券和债券投资',
+            'description_fr' => 'Placements en titres et obligations',
+            'description_de' => 'Anlagen in Wertpapieren und Obligationen'
         ]);
         DB::table('tariff_plans')->insert([
-            'title' => 'Invest Case',
-            'min_invest' => 10000,
-            'description_ru' => ' Индивидуальные условия для инвесторов
-            <p>
-              Для получения инвестиционного предложения свяжитесь с
-              инвестиционным советником
-            </p>',
-            'description_en' => 'Business offers for existing investors',
-            'description_zh' => '为现有投资者提供的商业机会',
-            'description_fr' => 'Opportunités commerciales pour les investisseurs existants',
-            'description_de' => 'Geschäftsmöglichkeiten für bestehende Investoren'
+            'title' => 'Invest Portfolio',
+            'min_invest' => 5000,
+            // 'max_invest' => 10000,
+            'profit' => 7,
+            // 'deposit_term' => 75,
+            'description_ru' => 'Для инвесторов финансист подбирает индивидуальное Portfolio с более выгодной процентной ставкой   ',
+            'description_en' => 'Investments in securities and bonds',
+            'description_zh' => '证券和债券投资',
+            'description_fr' => 'Placements en titres et obligations',
+            'description_de' => 'Anlagen in Wertpapieren und Obligationen'
         ]);
 
         DB::table('payment_currencies')->insert([

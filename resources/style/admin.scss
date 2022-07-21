@@ -10,7 +10,7 @@
     grid-gap: 30px;
     padding: 50px;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     &__main-logo {
         grid-area: logo;
         align-self: center;
@@ -40,6 +40,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+        max-height: 650px;
     }
     &__logo {
         width: 85px;
@@ -97,7 +98,9 @@
     }
     &__logout {
         display: flex;
-        @extend %btn;
+        button {
+            @extend %btn;
+        }
         margin-top: auto;
         img {
             margin-right: 6px;
@@ -135,6 +138,7 @@
             .clients-item {
                 width: 370px;
                 background: #444;
+                max-height: 175px;
                 border-radius: 27px;
                 padding: 22px 34px;
                 display: flex;
@@ -419,6 +423,9 @@
     }
     &__block {
         grid-area: balance;
+        form {
+            display: contents;
+        }
     }
     &__tariffs {
         grid-area: tariffs;
@@ -466,6 +473,7 @@
         display: flex;
         justify-content: flex-end;
         align-items: center;
+        flex-direction: column;
         p {
             font-family: Raleway;
             font-style: normal;
@@ -475,15 +483,23 @@
 
             color: #ffffff;
         }
-        span {
+        input {
             margin-left: 10px;
             font-family: Montserrat;
             font-style: normal;
             font-weight: bold;
-            font-size: 24px;
-            line-height: 29px;
+            font-size: 18px;
+            line-height: 24px;
 
             color: #ffffff;
+            padding: 5px;
+            border: 0;
+            border-bottom: 1px solid #fff;
+            background: none;
+        }
+        button {
+            @extend %btn;
+            margin-top: 10px;
         }
     }
     &__income {
@@ -540,13 +556,13 @@
         }
         .tariff {
             &.added {
-                button {
+                a {
                     background-color: #fff;
                     color: #000;
                 }
             }
             &.available {
-                button {
+                a {
                     background-color: #8af8ff;
                     color: #000;
                 }
@@ -563,7 +579,7 @@
                 font-weight: bold;
                 color: #fff;
             }
-            button {
+            a {
                 bottom: 0;
                 padding: 8px;
                 border-radius: 99px;
@@ -584,6 +600,21 @@
 
             color: #ffffff;
             margin-bottom: 15px;
+        }
+        ul {
+            max-height: 350px;
+            padding-right: 10px;
+            overflow-y: auto;
+            &::-webkit-scrollbar {
+                display: block;
+                width: 6px;
+            }
+            &::-webkit-scrollbar-thumb {
+                width: 6px;
+                display: block;
+                background: #1df1ff;
+                border-radius: 3px;
+            }
         }
         .history-item {
             display: flex;
@@ -618,6 +649,7 @@
                 border: 0;
                 background: #8af8ff;
                 color: #000;
+                cursor: pointer;
             }
         }
     }

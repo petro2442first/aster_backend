@@ -1,7 +1,7 @@
 <form id="deposit" action="https://perfectmoney.com/api/step1.asp" method="POST">
-    <input type="hidden" name="PAYEE_ACCOUNT" value="U36222957">
-<input type="hidden" name="PAYEE_NAME" value="Aster TFC">
-<input type="hidden" name="PAYMENT_ID" value="aster_tfc_invest">
+    <input type="hidden" name="PAYEE_ACCOUNT" value="U33663841">
+<input type="hidden" name="PAYEE_NAME" value="Aster ">
+<input type="hidden" name="PAYMENT_ID" value="aster_tfc">
     <input type="hidden" name="PAYMENT_AMOUNT" value="{{ $amount }}"><BR>
     <input type="hidden" name="PAYMENT_UNITS" value="USD">
     <input type="hidden" name="STATUS_URL" value="">

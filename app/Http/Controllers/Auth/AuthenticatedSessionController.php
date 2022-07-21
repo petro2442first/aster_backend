@@ -34,7 +34,8 @@ class AuthenticatedSessionController extends Controller
         $request->authenticate();
         $request->session()->regenerate();
         $user = Auth::user();
-        $user->last_login = 'online';
+        $user->last_login = Carbon::now('+2:00')->isoFormat('H:m D.M.Y');
+
         $user->saveOrFail();
         if(Auth::user()->is_admin == 1) {
             return redirect()->route('admin');
@@ -52,7 +53,7 @@ class AuthenticatedSessionController extends Controller
     public function destroy(Request $request)
     {
         $user = Auth::user();
-        $user->last_login = (string)Carbon::now('+3:00')->isoFormat('H:m D.M.Y');
+        $user->last_login = (string)Carbon::now('+2:00')->isoFormat('H:m D.M.Y');
         // dd($user->last_login);
         $user->saveOrFail();
         Auth::guard('web')->logout();

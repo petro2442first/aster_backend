@@ -1,0 +1,86 @@
+@media screen and (max-width: 425px) {
+  body.profile-body {
+    padding: 10px 0;
+  }
+  .profile__container {
+    width: 100%;
+  }
+  .profile__container .tariffs__container {
+    width: 100%;
+    padding: 0 20px 0 0;
+  }
+  .profile__container .tariffs__container .tariff-item {
+    width: 100%;
+  }
+  .profile__container .deposits {
+    padding: 20px 10px;
+  }
+  .profile__container .deposits__list > div {
+    min-height: 125px;
+  }
+  .profile__row .choose-tariff {
+    flex-direction: column;
+    align-items: center;
+  }
+  .profile__row .choose-tariff .custom-select-container {
+    margin-left: 75px;
+  }
+  .pay-tariff-modal__title {
+    font-size: 20px;
+  }
+  .pay-tariff-modal__close-btn {
+    width: 30px;
+    height: 30px;
+    top: 15px;
+    right: 15px;
+  }
+  .pay-tariff-modal__row .tariffs h2 {
+    font-size: 14px;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item {
+    border-radius: 10px;
+    box-shadow: none;
+    margin: 15px 0;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__period {
+    display: none;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__price {
+    font-size: 12px;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__title {
+    font-size: 14px;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .pay-tariff-modal__row .tariffs__container .tariff-item__percents {
+    align-self: center;
+    font-size: 12px;
+  }
+  .pay-tariff-modal__row .payment {
+    margin-left: 10px;
+    padding: 0;
+  }
+  .pay-tariff-modal__row .payment form .tariffs__container .tariff-item {
+    width: 120px;
+  }
+  .pay-tariff-modal__row .payment__description {
+    font-size: 12px;
+    max-width: 120px;
+  }
+  .pay-tariff-modal__row .payment__value {
+    width: 100%;
+  }
+  .pay-tariff-modal__row .payment__value input {
+    font-size: 12px;
+    padding: 10px;
+  }
+  .history-modal__date {
+    font-size: 14px;
+  }
+  .history-modal__value {
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=media-425.css.map */

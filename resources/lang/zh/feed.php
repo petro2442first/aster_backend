@@ -12,7 +12,7 @@ return [
     'deposit' => '存款资金',
     'deposit_notify' => '存款只提供给经过验证的用户',
     'withdraw' => '撤消 ',
-    'withdraw_notify1' => '只有在购买了50美元以上的标准费率后或在任何其他费率的期限结束后才可以提取。.',
+    'withdraw_notify1' => '仅在购买关税并在其到期后才能提款',
     'withdraw_notify2' => '在你的费率到期后，可以提取。.',
     'withdraw_notify3' => '你已经发送了提款请求.',
     'withdraw_notify4' => 'Withdrawal is available from 50$',
@@ -36,5 +36,7 @@ return [
     'withdrawed' => '提取资金',
     'no_operations' => '没有业务',
     'withdraw_sum' => '提款金额',
-    'main__info' => '对于超过300美元的存款，你需要联系技术支持'
+    'main__info' => '对于超过200美元的存款，你需要联系技术支持',
+    'support' => '支持',
+    'save_photo' => '添加照片'
 ];

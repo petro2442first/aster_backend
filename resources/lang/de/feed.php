@@ -12,7 +12,7 @@ return [
     'deposit' => 'Einlagefonds',
     'deposit_notify' => 'Einzahlungen sind nur für verifizierte Nutzer möglich',
     'withdraw' => 'Zurückziehen ',
-    'withdraw_notify1' => 'Die Kündigung ist nur nach dem Kauf eines Standardtarifs ab 50$ oder nach dem Ende der Laufzeit eines anderen Tarifs möglich.',
+    'withdraw_notify1' => 'Die Auszahlung ist nur nach dem Kauf des Tarifs und nach dessen Ablauf möglich',
     'withdraw_notify2' => 'Die Kündigung ist nach Ablauf Ihres Tarifs möglich.',
     'withdraw_notify3' => 'Sie haben bereits einen Abhebungsantrag gestellt.',
     'withdraw_notify4' => 'Abhebungen sind ab 50$ möglich',
@@ -20,7 +20,7 @@ return [
     'refs' => 'Ihre Empfehlungen',
     'no_refs' => 'Keine Überweisungen',
     'calc' => 'Rentabilitäts-Rechner',
-    'calc__select_tariffs' => 'Choose your tariff',
+    'calc__select_tariffs' => 'Wählen Sie einen Plan',
     'calc__sum' => 'Höhe der Investition:',
     'calc__profit' => 'Gewinn:',
     'calc_term' => 'Laufzeit der Investition:',
@@ -36,6 +36,8 @@ return [
     'withdrawed' => 'Abhebung von Mitteln',
     'no_operations' => 'Keine Operationen',
     'withdraw_sum' => 'Abzuhebender Betrag',
-    'main__info' => 'Wenn Sie mehr als 300 $ einzahlen, müssen Sie den technischen Support kontaktieren.',
-    'see_all' => 'Alle sehen'
+    'main__info' => 'Wenn Sie mehr als 200 $ einzahlen, müssen Sie den technischen Support kontaktieren.',
+    'see_all' => 'Alle sehen',
+    'support' => 'Unterstützung',
+    'save_photo' => 'Foto hinzufügen'
 ];

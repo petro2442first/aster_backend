@@ -36,11 +36,11 @@ return [
     'mailers' => [
         'smtp' => [
             'transport' => 'smtp',
-            'host' => 'mail.aster-tfc.com',
+            'host' => 'mail.valians-finance.com',
             'port' => 465,
-            'encryption' => 'tls',
-            'username' => '	info@aster-tfc.com',
-            'password' => 'Q4ASv3rjqCawNLn',
+            'encryption' => 'ssl',
+            'username' => 'info@aster-tfc.com',
+            'password' => 'Petro244275665',
             'timeout' => null,
             'auth_mode' => null,
         ],
@@ -84,7 +84,7 @@ return [
     */
 
     'from' => [
-        'address' => 'info@aster-tfc.com',
+        'address' => 'info@valians-finance.com',
         'name' => 'Aster TFC',
     ],
 

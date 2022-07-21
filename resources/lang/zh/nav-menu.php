@@ -7,5 +7,6 @@ return [
     'faq' => 'FAQ',
     'contacts' => '联系我们',
     'login' => '登录',
-    'register' => '注册'
+    'register' => '注册',
+    'start' => '开始'
 ];

@@ -1,0 +1,94 @@
+@media screen and (max-width: 1150px) {
+  body.register-body .header__nav .nav-list {
+    justify-content: flex-start;
+  }
+  body.register-body .header__nav .nav-item:not(.nav-logo) {
+    display: flex;
+  }
+  body.register-body .header__nav .nav-item.nav-logo {
+    position: static;
+    transform: none;
+    top: 0;
+    left: 0;
+  }
+  .wrapper {
+    max-width: 100%;
+    padding: 40px;
+  }
+  .logo {
+    display: block;
+  }
+  .header__nav .burger {
+    display: block;
+    transition: 0.3s;
+  }
+  .header__nav .nav-list {
+    position: fixed;
+    visibility: hidden;
+    opacity: 0;
+    right: -275px;
+    top: 0;
+    width: 275px;
+    background: #000;
+    height: 100vh;
+    padding: 80px 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    transition: 0.3s;
+    z-index: 9999;
+  }
+  .header__nav .nav-item + li {
+    margin-top: 55px;
+  }
+  .header__nav .nav-item.current a {
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 32px;
+    color: rgba(138, 248, 255, 0.89);
+    white-space: nowrap;
+  }
+  .header__nav .nav-item a {
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+  }
+  .header__nav .nav-item.nav-logo {
+    order: -1;
+    margin-bottom: 75px;
+  }
+  .header__nav .nav-item.nav-logo a {
+    width: 100%;
+  }
+  .header__nav .nav-item.nav-logo a .logo-description {
+    font-size: 12px;
+    line-height: 14px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .header__nav .nav-item.nav-logo a .logo-title {
+    font-size: 48px;
+    line-height: 56px;
+    text-align: center;
+  }
+  .header__nav .nav-item.nav-lang {
+    border-top: 1px solid #fff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 30px;
+  }
+  .header__nav.show .burger {
+    transform: translateX(-275px);
+  }
+  .header__nav.show .nav-list {
+    opacity: 1;
+    visibility: visible;
+    right: 0;
+  }
+  .contacts .contacts-info__item p {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 24px;
+  }
+}/*# sourceMappingURL=media-1150.css.map */

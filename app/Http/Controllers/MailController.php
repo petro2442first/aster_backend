@@ -14,7 +14,7 @@ class MailController extends Controller
         $message = $request->message;
         $email = $request->email;
         $subject = $request->subject;
-        Mail::to(env('MAIL_FROM_ADDRESS', 'mrb13022001@gmail.com'))->send(new SendMessage($subject, $message, $email));
+        Mail::to(env('MAIL_FROM_ADDRESS', 'info@valians-finance.com'))->send(new SendMessage($subject, $message, $email));
         return redirect()->back();
     }
 }

@@ -28,34 +28,29 @@ class PaymentController extends Controller
     {
         $user = Auth::user();
         $user = User::find($user->id);
-        if($user->confirmed === 0)
-        return redirect()->route('payment-error', ['no-confirmed']);
-
         $payment = PaymentCurrency::all()->where('title', 'USD')->first();
         $route_success = $admin == 'admin'
         ? route('payment-success', [
             'payment' => (double)$request->amount,
-            'currency' => 'USD',
-            'tariff_id' => $request->tariff_id,
+            'tariff_id' => TariffPlan::all()->where('title', Str::headline($request->tariff))->first()->id,
             'admin' => $admin
         ])
         : route('payment-success', [
             'payment' => (double)$request->amount,
-            'currency' => 'USD',
-            'tariff_id' => $request->tariff_id
+            'tariff_id' => TariffPlan::all()->where('title', Str::headline($request->tariff))->first()->id
         ]);
-
         $route_error = $admin == 'admin'
         ? route('profile.index-admin')
-        : route('payment-error');
-        PaymentController::success($request, $request->amount, $request->tariff);
-        // return view('payment.tariff_post', [
-        //     'payment' => $payment,
-        //     'amount' => $request->amount,
-        //     'tariff_id' => $request->tariff_id,
-        //     'success_url' => $route_success,
-        //     'error_url' => $route_error
-        // ]);
+        : route('profile');
+        // dd($route_success, $route_error);
+        // PaymentController::success($request, $request->amount, $request->tariff);
+        return view('payment.tariff_post', [
+            'payment' => $payment,
+            'amount' => $request->amount,
+            'tariff_id' => TariffPlan::all()->where('title', Str::headline($request->tariff))->first()->id,
+            'success_url' => $route_success,
+            'error_url' => $route_error
+        ]);
         return redirect()->route('profile');
     }
     public function deposit(string $admin = '')
@@ -124,13 +119,12 @@ class PaymentController extends Controller
         ]);
     }
     static public function success(
-        Request $request,
-        $payment = null,
-        $tariff_id = null)
+        Request $request)
     {
 
         $user = User::find(Auth::user()->id);
-            $payment = $request->amount;
+            $payment = $request->payment;
+            // dd($request);
             $tariff_id = $request->tariff_id;
             $user->balance += $payment;
             $user->insurance_balance = $user->balance;

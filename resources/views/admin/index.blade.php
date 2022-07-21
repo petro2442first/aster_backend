@@ -50,9 +50,11 @@
                   <div class="clients-item__col">
                     <h3>Тарифы: </h3>
                     <div class="clients-item__tariffs">
-                        @foreach($user->tariffs() as $tariff)
-                        <span class="{{ Str::slug($tariff->title, '') }}"></span>
-                        @endforeach
+                        @forelse ($user->tariffs() as $tariff)
+                            <span class="{{ Str::slug($tariff->title, '') }}"></span>
+                        @empty
+
+                        @endforelse
                     </div>
                   </div>
                   <div class="clients-item__col">
@@ -61,9 +63,9 @@
                     <div class="clients-item__phone">{{ $user->phone }}</div>
                   </div>
                 </div>
-                <div class="clients-item__open-btn">Open</div>
+                <div class="clients-item__open-btn" data-modal="#user-modal-{{ $user->id }}" >Открыть</div>
               </div>
-              <div class="user" id="user-modal-{{ $user->id }}">
+              <div class="user @if(session('user_id') == $user->id) show @endif" id="user-modal-{{ $user->id }}">
                 <div class="user__container">
                   <div class="user__close">
                     <img src="images/close.svg" alt="" />
@@ -75,58 +77,65 @@
                     <div class="user__phone">{{ $user->phone }}</div>
                     <div class="user__phone">IP: {{ $user->ip }}</div>
                     <div class="user__row">
-                        <form action="{{ route('delete-user') }}">
+                        <form action="{{ route('delete-user') }}" method="POST">
+                            @csrf
                             <input type="hidden" name="id" value={{ $user->id }}>
                             <button type="submit" class="user__delete">Удалить</button>
                         </form>
-                      <div class="user__profile">Перейти в ЛК</div>
+                      {{-- <div class="user__profile">Перейти в ЛК</div> --}}
                     </div>
                   </div>
                   <div class="user__block">
-                    <form action="{{ route('user.set-balance') }}">
+                    <form action="{{ route('user.set-balance') }}" method="POST">
+                        @csrf
                     <div class="user__balance">
                             <p>БАЛАНС:</p>
-                            <input type="number" step="0.01" value="{{ $user->balance }}">$
+                            <input type="hidden" name="user_id" value="{{ $user->id }}">
+                            <input type="text" name="title" placeholder="Сообщение">
+                            <input type="number" name="amount" step="0.01" value="{{ $user->balance }}">
                             <button type="submit">Изменить баланс</button>
                     </div>
-                </form>
+                    </form>
                   </div>
                   <div class="user__tariffs">
                     <h3>Тарифы</h3>
                     <ul>
-                      <div class="tariff added">
-                        <p>Silver</p>
-                        <button class="remove">-</button>
-                      </div>
-                      <div class="tariff added">
-                        <p>Gold</p>
-                        <button class="remove">-</button>
-                      </div>
-                      <div class="tariff available">
-                        <p>Platinum</p>
-                        <button class="add">+</button>
-                      </div>
-                      <div class="tariff available">
-                        <p>Infinity</p>
-                        <button class="add">+</button>
-                      </div>
-                      <div class="tariff available">
-                        <p>Invest Case</p>
-                        <button class="add">+</button>
-                      </div>
+                        @foreach($user->getSortedTariffs()['acquired'] as $tariff)
+                        <div class="tariff added">
+                            <p>{{ $tariff->title }}</p>
+                            <a href="{{ route('admin.remove-tariff', [
+                                'id' => $tariff->id,
+                                'user_id' => $user->id]) }}" class="remove">-</a>
+                          </div>
+                        @endforeach
+                        @foreach($user->getSortedTariffs()['available'] as $tariff)
+                        <div class="tariff available">
+                            <p>{{ $tariff->title }}</p>
+                            <a href="{{ route('admin.add-tariff', [
+                                'id' => $tariff->id,
+                                'user_id' => $user->id]) }}" class="add">+</a>
+                          </div>
+                        @endforeach
                     </ul>
                   </div>
                   <div class="user__history">
                     <h3>История транзакций</h3>
                     <ul>
-                      <div class="history-item in">
-                        <p>+3000$</p>
-                        <button class="remove">-</button>
-                      </div>
-                      <div class="history-item out">
-                        <p>-3000$</p>
-                        <button class="remove">-</button>
-                      </div>
+                        @forelse ($user->transfers->reverse() as $index => $transfer)
+                        <div class="history-item {{ $transfer->appointment == '+' ? 'in' : 'out' }}">
+                            <p>{{$transfer->appointment}}{{ $transfer->value }}$</p>
+                            <form action="{{ route('admin.edit-transfer-date', [
+                                'user_id' => $user->id,
+                                'id' => $transfer->id
+                            ]) }}" method="GET">
+                                <input type="date" name="date" id="" value="{{ $transfer->date }}">
+                                <button type="submit">Сохранить</button>
+                            </form>
+                            <a href="{{ route('admin.delete-transfer', ['id' => $transfer->id]) }}" class="remove">-</a>
+                        </div>
+                        @empty
+                            <p style="color: #fff">Вы не проводили никаких операций</p>
+                        @endforelse
                     </ul>
                   </div>
                 </div>
@@ -137,80 +146,28 @@
           </div>
         </div>
         <div class="admin__block requests " data-tab="requests">
-          <div class="admin__block-title">Inquiries</div>
+          <div class="admin__block-title">Запросы</div>
           <div class="requests__container">
-            <div class="requests__item">
-              <div class="requests__row">
-                <div class="requests__col">
-                  <div class="requests__title">Вывод средств:</div>
-                  <div class="requests__value">3000$</div>
+              @forelse ($requests as $request)
+              <div class="requests__item">
+                <div class="requests__row">
+                  <div class="requests__col">
+                    <div class="requests__title">Вывод средств:</div>
+                    <div class="requests__value">{{ $request->amount }}$</div>
+                  </div>
+                  <div class="requests__col">
+                    <div class="requests__name">{{ $user->name }} {{ $user->lastname }}</div>
+                    <div class="requests__email">{{ $user->email }}</div>
+                    <div class="requests__phone">{{ $user->phone }}</div>
+                  </div>
                 </div>
-                <div class="requests__col">
-                  <div class="requests__name">Петров Иванов</div>
-                  <div class="requests__id">ID: Idpetrovivan1</div>
-                  <div class="requests__email">petrov@gmail.com</div>
-                  <div class="requests__phone">(+380)96-743-12-43</div>
+                <div class="requests__btns">
+                    <a href="{{ route('admin.delete-withdraw-request', ['req_id' => $request->id]) }}" class="requests__no">Удалить</a>
+                  </div>
                 </div>
-              </div>
-              <div class="requests__btns">
-                <div class="requests__yes">Yes</div>
-                <div class="requests__no">No</div>
-              </div>
-            </div>
-            <div class="requests__item">
-              <div class="requests__row">
-                <div class="requests__col">
-                  <div class="requests__title">Вывод средств:</div>
-                  <div class="requests__value">3000$</div>
-                </div>
-                <div class="requests__col">
-                  <div class="requests__name">Петров Иванов</div>
-                  <div class="requests__id">ID: Idpetrovivan1</div>
-                  <div class="requests__email">petrov@gmail.com</div>
-                  <div class="requests__phone">(+380)96-743-12-43</div>
-                </div>
-              </div>
-              <div class="requests__btns">
-                <div class="requests__yes">Yes</div>
-                <div class="requests__no">No</div>
-              </div>
-            </div>
-            <div class="requests__item">
-              <div class="requests__row">
-                <div class="requests__col">
-                  <div class="requests__title">Вывод средств:</div>
-                  <div class="requests__value">3000$</div>
-                </div>
-                <div class="requests__col">
-                  <div class="requests__name">Петров Иванов</div>
-                  <div class="requests__id">ID: Idpetrovivan1</div>
-                  <div class="requests__email">petrov@gmail.com</div>
-                  <div class="requests__phone">(+380)96-743-12-43</div>
-                </div>
-              </div>
-              <div class="requests__btns">
-                <div class="requests__yes">Yes</div>
-                <div class="requests__no">No</div>
-              </div>
-            </div>
-            <div class="requests__item">
-              <div class="requests__row">
-                <div class="requests__col">
-                  <div class="requests__title">Вывод средств:</div>
-                  <div class="requests__value">3000$</div>
-                </div>
-                <div class="requests__col">
-                  <div class="requests__name">Петров Иванов</div>
-                  <div class="requests__id">ID: Idpetrovivan1</div>
-                  <div class="requests__email">petrov@gmail.com</div>
-                  <div class="requests__phone">(+380)96-743-12-43</div>
-                </div>
-              </div>
-              <div class="requests__btns">
-                <div class="requests__yes">Yes</div>
-                <div class="requests__no">No</div>
-              </div>
-            </div>
+              @empty
+                  Список запросов на вывод пуст!
+              @endforelse
           </div>
         </div>
       </main>

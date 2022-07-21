@@ -6,6 +6,8 @@ use App\Models\TariffPlan;
 use App\Models\Transfer;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
+use Carbon\Carbon;
+
 class ProfileController extends Controller
 {
     public function index($id = null, $payment = null, $currency = null, $tariff_id = null)
@@ -85,6 +87,7 @@ class ProfileController extends Controller
                 array_push($available_plans, $plan);
         }
         if($available_plans === null and $available_plans[0] === null) $available_plans = [];
+
 //        --------------------------
 //        Transfers
         $transfers = $user->transfers->reverse();
@@ -105,7 +108,7 @@ class ProfileController extends Controller
         }
 
         if($withdraw == true) {
-            $withdraw = $user->payment_request !== null ? __('feed.withdraw_notify3') : true;
+            $withdraw = $user->payment_request != null ? __('feed.withdraw_notify3') : true;
         } else {
             $withdraw = __('feed.withdraw_notify2');
         }

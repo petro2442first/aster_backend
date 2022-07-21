@@ -7,5 +7,6 @@ return [
     'faq' => 'FAQ',
     'contacts' => 'Nous contacter',
     'login' => 'Connexion',
-    'register' => 'Inscription'
+    'register' => 'Inscription',
+    'start' => 'Commencer'
 ];

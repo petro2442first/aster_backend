@@ -52,7 +52,8 @@ Route::middleware(['locale', 'start'])->group(function () {
             'content' => 'fsdfsdf'
         ]);
     });
-
+    Route::get('/last_login', [ProfileController::class, 'setLastLogin'])
+    ->name('last_login');
     require __DIR__ . '/auth.php';
     require __DIR__ . '/payment.php';
     require __DIR__ . '/admin.php';
